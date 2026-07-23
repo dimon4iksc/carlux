@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Сторінка подяки</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="src/img/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="src/img/favicon.ico" rel="shortcut icon">
+
+    <link rel="stylesheet" href="src/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104225499-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-104225499-1');
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '785101158357215');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-182386150-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-182386150-1');
+</script>
+
+    
+</head>
+<body>
+	<div class="modal fade" id="orderCallModal" tabindex="-1" role="dialog" aria-labelledby="orderCallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="orderCallModalLabel">Введіть контактні дані і ми зв'яжемось з вами</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<form action="send.php" method="get">
+			  <div class="modal-body">
+				<div class="form-body">
+			  <div class="input-item">
+				<input type="text" placeholder="Ім'я" name="name" required>
+			  </div>
+			  <div class="input-item">
+				<input type="tel" class="tel" placeholder="Телефон" name="phone_number" required>
+			  </div>
+			</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="submit" class="btn main-btn main-btn-big">Замовити</button>
+			  </div>
+		  </form>
+		  </div>
+		</div>
+	</div>
+
+  <header id="header" class="header">
+		<div class="top-header">
+			<div class="container">
+				<div class="row justify-content-end align-items-center">
+					<div class="header-call">
+						<div class="phones-header">
+							<div class="phones">
+								<span><a href="tel:+380972189000">097 218-9000</a></span>
+							</div>
+						</div>
+						<div class="ask-question-header">
+							<button type="button" class="btn main-btn" data-toggle="modal" data-target="#orderCallModal">Замовити дзвінок</button>
+							<span>Працюємо у вихідні</span>
+						</div>
+					</div>
+					<div class="messengers-header">
+						<a href="#instagram"><img src="src/img/instagram-icon.png" alt="instagram-icon.png"></a>
+						<a href="#messenger"><img src="src/img/facebook-icon.png" alt="facebook-icon"></a>
+					</div>
+					<div class="lviv-header">
+						<img src="src/img/lviv-logo.png" alt="lviv-logo.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu-header">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-dark">
+					<div class="logo-header">
+            <a href="https://www.carlux.com.ua/" title="https://www.carlux.com.ua/">
+              <img src="src/img/logo.png" alt="header-logo">
+            </a>
+						<span>Професійна <br> хімчистка авто</span>
+						<span>Професійне <br> полірування кузову</span>
+					</div>
+				    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				    	<span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					    <div class="navbar-nav">
+					        <a class="nav-item nav-link active" href="#banner">Головна</a>
+					        <a class="nav-item nav-link" href="#our-services">Послуги</a>
+					        <a class="nav-item nav-link" href="#prices">Ціни</a>
+					        <a class="nav-item nav-link" href="#gallery-section">Галерея</a>
+					        <a class="nav-item nav-link" href="#map">Ми на карті</a>
+					        <a class="nav-item nav-link" href="#reviews">Відгуки</a>
+					        <a class="nav-item nav-link" href="#contacts">Контакти</a>
+					    </div>
+				    </div>
+				</nav>
+			</div>
+		</div>
+  </header>
+
+  <button id="btn-to-top" title="Go to top"></button>
+  
+  <section id="thanks" class="thanks">
+    <div class="container">
+      <h2 class="db-bg">Дякуємо! <br> Ваша заявка прийнята :) <br> Незабаром з Вами зв'яжеться менеджер</h2>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer">
+	  <div class="footer-info">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="footer_social-networks">
+					<a href="https://www.instagram.com/carlux.detailing/">
+						<img src="src/img/instagram-icon.png" alt="instagram-icon.png">
+						<span>@carlux.detailing</span>
+					</a>
+					<a href="https://viber.com">
+						<img src="src/img/viber-icon.png" alt="viber-icon.png">
+						<span>097 218-9000</span>
+					</a>
+				</div>
+				<div class="brand-info">
+					<div class="logo-footer">
+						<img src="src/img/logo.png" alt="header-logo">
+					</div>
+					<div class="adress">
+						<p>Detailing студія - CarLux</p>
+						<p>Адреса:</p>
+						<p>с. Сокільники, вул. Лесі Українки 17</p>
+						<p>м. Львів, вул. Наукова 2д</p>
+					</div>
+				</div>
+			</div>
+		  </div>
+	  </div>
+	<div class="copyright"><a href="carlux.com.ua">carlux.com.ua</a></div>
+  </footer>
+
+  <script src="src/js/jquery-3.3.1.min.js"></script>
+  <script src="src/bootstrap/bootstrap.min.js"></script>
+  <script src="src/js/inputmask-jquery-plugin/jquery.inputmask.bundle.js"></script>
+  <script src="src/js/script.js"></script>
+</body>
+</html>

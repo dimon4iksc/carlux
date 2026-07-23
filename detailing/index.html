@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Хімчистка салону авто у Львові — CarLux Detailing</title>
+
+	<meta name="description" content="Професійна хімчистка салону авто у Львові: видалення плям та запахів, сушка салону, відновлення до стану нового. Детейлінг студія CarLux.">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://www.carlux.com.ua/detailing/">
+
+	<meta property="og:title" content="Хімчистка салону авто у Львові — CarLux Detailing">
+	<meta property="og:site_name" content="CarLux">
+	<meta property="og:url" content="https://www.carlux.com.ua/detailing/">
+	<meta property="og:description" content="Професійна хімчистка салону авто у Львові.">
+	<meta property="og:image" content="https://www.carlux.com.ua/detailing/src/img/logo-2.png">
+	
+
+	<link href="src/img/logo-3.png" rel="icon" type="image/x-icon">
+    <link href="src/img/logo-3.png" rel="shortcut icon">
+
+	<link rel="stylesheet" href="src/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+	<link rel="stylesheet" href="src/colorbox/colorbox.css">
+	<link rel="stylesheet" href="src/css/style.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169333643-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169333643-1');
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '785101158357215');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+</head>
+<body>
+	<!-- Modals -->
+	<div class="modal fade" id="makeOrderModal" tabindex="-1" role="dialog" aria-labelledby="makeOrderModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="makeOrderModalLabel">Введіть контактні дані і ми зв'яжемось з вами</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form action="send-order.php" method="post">
+		      <div class="modal-body">
+		        <div class="form-body" action="send.php" method="post">
+		        	<div class="input-item">
+						<input id="auto" type="text" name="auto" required>
+					</div>
+		        	<div class="input-item">
+		        		<select name="service" id="service" required>
+		        			<option value="Standart+" selected>Standart+</option>
+		        			<option value="Standart LUX">Standart LUX</option>
+		        		</select>
+					</div>
+					<div class="input-item">
+						<input type="text" placeholder="Ім'я" name="name" required>
+					</div>
+					<div class="input-item">
+						<input type="tel" class="tel" placeholder="Телефон" name="phone_number" required>
+					</div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn main-btn main-btn-big">Замовити</button>
+		      </div>
+	  	  </form>
+	    </div>
+	  </div>
+	</div>
+
+	<!--  Modal Order Call -->
+	<div class="modal fade" id="orderCallModal" tabindex="-1" role="dialog" aria-labelledby="orderCallModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="orderCallModalLabel">Введіть контактні дані і ми зв'яжемось з вами</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form action="send.php" method="post">
+		      <div class="modal-body">
+		        <div class="form-body">
+					<div class="input-item">
+						<input type="text" placeholder="Ім'я" name="name" required>
+					</div>
+					<div class="input-item">
+						<input type="tel" class="tel" placeholder="Телефон" name="phone_number" required>
+					</div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn main-btn main-btn-big">Замовити дзвінок</button>
+		      </div>
+		  </form>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Modal Services -->
+	<div class="modal fade" id="servicesModal" tabindex="-1" role="dialog" aria-labelledby="servicesModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="servicesModalLabel"></h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+		      <div class="modal-body">
+		        
+		      </div>
+		      <div class="modal-footer justify-content-center">
+					<button type="submit" class="btn main-btn main-btn-big" data-toggle="modal" data-target="#orderCallModal" data-dismiss="modal">Замовити дзвінок</button>
+		      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Modal Prices Comparison -->
+	<div class="modal fade" id="comparisonModal" tabindex="-1" role="dialog" aria-labelledby="comparisonModal" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="comparisonModal">Порівняння Хімчистка Standart + та Хімчистка LUX</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	    
+	      <div class="modal-body">
+	        <table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th scope="col">Хімчистка LUX</th>
+			      <th>Салон</th>
+			      <th>Хімчистка Standart +</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">розбір авто (зняття сидінь)</td>
+			      <td><span class="isnt"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">пилосошення салону</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка стелі</td>
+			      <td><span class="isnt"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка сидінь</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка ковроліну</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка дверних карт</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка багажнику</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка поліків</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка  вентиляцій парою + дезинфекія  (Fresh Air)</td>
+			      <td><span class="isnt"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">чистка панелі та супутніх елементів</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">полірування пластику (Nanotex)</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			  </tbody>
+			</table>
+
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th scope="col">Хімчистка LUX</th>
+			      <th>Кузов</th>
+			      <th>Хімчистка Standart +</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">миття безконтактом </td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">миття піною</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">воскування полімером (Nano Kenotek)</td>
+			      <td><span class="is"></span></td>
+			    </tr>
+			    <tr>
+			      <td><span class="is"></span></td>
+			      <td scope="row">полірування шин (extra black )</td>
+			      <td><span class="isnt"></span></td>
+			    </tr>
+			    <tr>
+			    	<td><span class="is"></span></td>
+			    	<td scope="row">миття двигуна</td>
+			    	<td><span class="isnt"></span></td>
+			    </tr>
+			  </tbody>
+			</table>
+	      </div>
+
+	      <div class="modal-footer justify-content-center">
+	        <button type="button" class="btn main-btn main-btn-big" data-toggle="modal" data-target="#orderCallModal" data-dismiss="modal">Замовити дзвінок</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<header id="header" class="header">
+		<div class="top-header">
+			<div class="container">
+				<div class="row justify-content-end align-items-center">
+					<div class="header-call">
+						<div class="phones-header">
+							<div class="phones">
+								<span><a href="tel:+380972189000">097 218-9000</a></span>
+							</div>
+						</div>
+						<div class="ask-question-header">
+							<button type="button" class="btn main-btn" data-toggle="modal" data-target="#orderCallModal">Замовити дзвінок</button>
+							<span>Працюємо у вихідні</span>
+						</div>
+					</div>
+					<div class="messengers-header">
+						<a href="https://www.instagram.com/carlux.detailing/"><img src="src/img/instagram-icon.png" alt="instagram-icon.png"></a>
+						<a href="viber://add?number=0972189000"><img src="src/img/viber-icon.png" alt="viber-icon.png"></a>
+					</div>
+					<div class="lviv-header">
+						<img src="src/img/lviv-logo.png" alt="lviv-logo.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu-header">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-dark">
+					<div class="logo-header">
+            <a href="https://www.carlux.com.ua/" title="https://www.carlux.com.ua/">
+              <img src="src/img/logo.png" alt="header-logo">
+            </a>
+						<span>Професійна <br> хімчистка авто</span>
+						<span>Професійне <br> полірування кузову</span>
+					</div>
+				    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				    	<span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					    <div class="navbar-nav">
+					        <a class="nav-item nav-link active" href="#banner">Головна</a>
+					        <a class="nav-item nav-link" href="#our-services">Послуги</a>
+					        <a class="nav-item nav-link" href="#prices">Ціни</a>
+					        <a class="nav-item nav-link" href="#gallery-section">Галерея</a>
+					        <a class="nav-item nav-link" href="#map">Ми на карті</a>
+					        <a class="nav-item nav-link" href="#reviews">Відгуки</a>
+					        <a class="nav-item nav-link" href="#contacts">Контакти</a>
+					    </div>
+				    </div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<button id="btn-to-top" title="Go to top"></button>
+
+	<section id="banner" class="banner">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="banner-logo">
+					<img src="src/img/logo-2.png" alt="src/img/logo-3.png">
+				</div>
+
+				<div class="banner-form">
+					<h1><span class="dg-bg"><span class="w">ЗАМОВТЕ ПРОФЕСІЙНУ</span> ХІМЧИСТКУ САЛОНУ АВТО</span></h1>
+					<p class="text-small"><span>Повна мийка у подарунок</span></p>
+
+					<div class="row no-gutters">
+						<div class="call-form">
+							<div class="bg-call-form">
+								<div class="form-title">
+									<span>Залиште Ваш телефон і наш консультант зв’яжеться з Вами</span>
+								</div>
+								<form class="form-body" action="send.php" method="post">
+									<div class="input-place">
+										<div class="input-item">
+											<input type="text" placeholder="Ім'я" name="name" required>
+										</div>
+										<div class="input-item">
+											<input type="tel" class="tel" placeholder="Телефон" name="phone_number"  required>
+										</div>
+									</div>
+									<div class="button-place">
+										<button type="submit" class="btn main-btn main-btn-big">Замовити</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="our-services" class="our-services">
+		<div class="container">
+			<h2>Наші послуги</h2>
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-5">
+					<div class="service service-2">
+						<div class="service-img"></div>
+						<h3>Хімчистка салону авто</h3>
+						<p>Проесійна хімчистка салону авто. <br> Видалення плям та запахів. <br> Відновлення салону до стану новго авто.</p>
+						<button type="button" id="btn-service-2" class="btn btn-service" data-toggle="modal" data-target="#servicesModal">Детальніше</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-5">
+					<div class="service service-1">
+						<div class="service-img"></div>
+						<h3>Полірування кузову</h3>
+						<p><span>Професійне полірування кузову. <br> Відновлення ЛКП до стану нового авто. <br> Системою #1 у світі - Rupes.</span></p>
+						<button type="button" id="btn-service-1" class="btn btn-service" data-toggle="modal" data-target="#servicesModal">Детальніше</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="gallery-section" class="gallery">
+		<div class="container">
+			<h2>Наші фото та відео</h2>
+
+			<div class="photo">
+				<div class="photo-carousel">
+					
+				</div>
+			</div>
+			
+			<div class="video">
+				<div class="video-carousel">
+				    <div class="video-3">
+				    	<iframe src="https://www.youtube.com/embed/60KOZnNedrI" frameborder="0" allowfullscreen></iframe>
+				    </div>
+				    <div class="video-1">
+				    	<iframe src="https://www.youtube.com/embed/lVx8rImTOrU" frameborder="0" allowfullscreen></iframe>
+				    </div>
+				    <div class="video-2">
+				    	<iframe src="https://www.youtube.com/embed/p7KgmuGvOLE" frameborder="0" allowfullscreen></iframe>
+				    </div>
+			  </div>
+			</div>
+		</div>
+	</section>
+
+	<section id="cleaning-salon" class="cleaning-salon dtl-steps-section">
+		<div class="container">
+			<h2 class="dg-bg">Як ми робимо хімчистку салону авто</h2>
+
+			<div class="dtl-steps">
+				<div class="dtl-step dtl-step-dark">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 17v-6a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v2"/><path d="M5 21v-3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M6 21v-2M18 21v-2"/><circle cx="9" cy="7" r="1.3"/></svg></div>
+					<h4>1) Розбір салону:</h4>
+					<ul><li>- зняття сидінь для кращого доступу до ковроліну та всіх щілин.</li></ul>
+				</div>
+				<div class="dtl-step dtl-step-light">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="9" height="10" rx="2"/><path d="M13 11h5a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-5"/><path d="M8 17v3M8 4v3"/></svg></div>
+					<h4>2) Суха вакуумна чистка:</h4>
+					<ul><li>- пилосошення салону, крісел, ковроліну у всіх щілинах. Karcher NT1/25Pro</li></ul>
+				</div>
+				<div class="dtl-step dtl-step-dark">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h4l1 3H8l1-3Z"/><path d="M8 6h6v4l2 11H6L8 10V6Z"/><path d="M7 13h8"/></svg></div>
+					<h4>3) Аква-Хімчистка Салону:</h4>
+					<ul><li>- чистка стелі, крісел, дверних карт, ковроліну та інших елементів</li></ul>
+				</div>
+				<div class="dtl-step dtl-step-light">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l1.2 2.4L16 6l-2.4 1.2L12 10l-1.2-2.8L8 6l2.8-.6L12 3Z"/><path d="M5 14l.8 1.6L8 16l-2.2.9L5 19l-.8-2.1L2 16l2.2-.4L5 14Z"/><path d="M18 13l.9 1.9L21 16l-2.1.9L18 19l-.9-2.1L15 16l2.1-1.1L18 13Z"/></svg></div>
+					<h4>4) Аква-Хімчистка — це:</h4>
+					<ul>
+						<li>- видалення плям, бруду</li>
+						<li>- видалення запахів</li>
+						<li>- дезинфекція</li>
+					</ul>
+				</div>
+				<div class="dtl-step dtl-step-dark">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 15a3 3 0 1 1 1-5.8A4 4 0 0 1 15 9a3.5 3.5 0 0 1 1 6.9H6Z"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2"/></svg></div>
+					<h4>5) Чистка парою та "Fresh Air":</h4>
+					<ul><li>- чистка та дезинфекція вентиляційних виходів.</li></ul>
+				</div>
+				<div class="dtl-step dtl-step-light">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="9" width="8" height="12" rx="1.5"/><path d="M9 9V6a2 2 0 0 1 4 0v3"/><path d="M17 13h2M17 17h2"/></svg></div>
+					<h4>6) Полірування та натирання Nanotex:</h4>
+					<ul>
+						<li>- чистка пластику від бруду</li>
+						<li>- натирання та відновлення</li>
+					</ul>
+				</div>
+				<div class="dtl-step dtl-step-dark">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></div>
+					<h4>7) Сушка салону:</h4>
+					<ul><li>- сушіння всіх елементів салону Bieffe Carfon Pro.</li></ul>
+				</div>
+				<div class="dtl-step dtl-step-light">
+					<div class="dtl-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l3-9 3 9M5.5 13h3"/><path d="M14 8v8M11 12h6a3 3 0 0 0 0-6h-3v10"/><path d="M4 20h16"/></svg></div>
+					<h4>8) Повна мийка авто Lux:</h4>
+					<ul>
+						<li>- безконтакт, шампунь</li>
+						<li>- воскування Nano Kenotek</li>
+						<li>- натирання шин</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="dtl-steps-footer">
+				<div class="dtl-badge"><span class="dtl-badge-icon">⚗</span> Професійна техніка та хімія</div>
+				<div class="dtl-badge dtl-badge-dark"><span class="dtl-badge-icon">✓</span> Гарантія на послуги від <b>CarLux</b></div>
+				<div class="dtl-badge"><span class="dtl-badge-icon">⏱</span> Термін виконання <b>1 день</b></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="carwash" class="carwash">
+		<img src="src/img/carwash.png" alt="carwash.png">
+	</section>
+
+	<section id="we-use" class="we-use">
+		<div class="container">
+			<h2 class="lg-bg">Використовуємо техніку та хімію</h2>
+			<div class="row no-gutters justify-content-between">
+				<div class="we-use-item">
+					<img src="src/img/logo-2.png" alt="src/img/logo-2.png">
+				</div>
+				<div class="we-use-item">
+					<div class="item">
+						<h3>Професійна хімія</h3>
+						<p><img src="src/img/we-use-1.png" alt="we-use-1.png">Використовуємо тільки професійну хімію. Провідних світових брендів. Хімія сертифікована та немає шкідливих випарів.</p>
+					</div>
+				</div>
+				<div class="we-use-item">
+					<div class="item">
+						<h3>Професійна техніка</h3>
+						<p><img src="src/img/karch-img.jpg" alt="karch-img.jpg">Використовуємо лише професійну техніку. Кращих світових брендів. Якісна техніка дозволяє робити хімчистку салону швидко та якісно.</p>
+					</div>
+				</div>
+				<div class="we-use-item">
+					<div class="item">
+						<h3>Професійний персонал</h3>
+						<p><img src="src/img/workers-icon.jpg" alt="workers-icon.jpg">Кожен працівник має великий досвід у хімчистках солону авто. Правцівники підбирають хімію індивідуально під кожне авто. Залежно від складу покриття та виду рівня забруднення. Таким чином досягаємо найкращих результатів чистоти та відновлення.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="partners" class="partners">
+		<div class="container">
+			<div class="row no-gutters justify-content-center">
+				<div class="partner-img partner-img-1"></div>
+				<div class="partner-img partner-img-2"></div>
+				<div class="partner-img partner-img-3"></div>
+				<div class="partner-img partner-img-4"></div>
+				<div class="partner-img partner-img-5"></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="order-consultation" class="order-consultation">
+		<div class="container">
+			<form action="send-phone-number.php" method="post">
+				<div class="row align-items-center justify-content-around">
+					<p>Залиште Ваш телефон і наш консультант зв'яжеться з Вами.</p>
+					<input type="tel" class="tel" name="phone_number" placeholder="Телефон" required>
+					<button type="submit" class="btn main-btn main-btn-big">відправити</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section id="why-we" class="why-we">
+		<div class="container">
+			<h2>Чому замовляють хімчистку у нас?</h2>
+			<div class="row no-gutters justify-content-center">
+				<div class="col-6 col-lg-2">
+					<div class="why-we-icon why-we-icon-1"></div>
+					<p>Замовлення послуг <br>у зручний для Вас час</p>
+				</div>
+				<div class="col-6 col-lg-2">
+					<div class="why-we-icon why-we-icon-2"></div>
+					<p>Термін виконання <br> 1 день (від 6 - 10 год)</p>
+				</div>
+				<div class="col-6 col-lg-2">
+					<div class="why-we-icon why-we-icon-3"></div>
+					<p>Оплата готівкою або <br> безготівкова</p>
+				</div>
+				<div class="col-6 col-lg-2">
+					<div class="why-we-icon why-we-icon-4"></div>
+					<p>Сертифікована та <br>Безпечна хімія</p>
+				</div>
+				<div class="col-6 col-lg-2">
+					<div class="why-we-icon why-we-icon-5"></div>
+					<p>Гарантія на послуги 100% 20 днів</p>
+				</div>
+				<div class="col-6 col-lg-2">
+					<div class="why-we-icon why-we-icon-6"></div>
+					<p>Понад 10 000 клієнтів <br>замовили та стали <br>нашими постійними <br>клієнтами</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="prices" class="prices">
+		<div class="container">
+			<h2 class="h2-sb">
+				<span class="dg-bg">ДЕТЕЙЛІНГ ПОСЛУГИ</span><br>
+				<span class="db-bg">Наші ціни</span>
+			</h2>
+			<table class="table">
+			  <thead>
+			    <tr>
+			    	<th></th>
+				    <th scope="col">
+				    	<span>
+				    		<span>Хімчистка салону авто <br> Delux Premium</span>
+				     		<button type="button" class="btn btn-price" data-toggle="modal" data-target="#comparisonModal">Детальніше</button>
+				    	</span>
+				    </th>
+			    	<th scope="col">
+			    		<span>
+			    			<span>Полірування авто <br> Delux Premium</span>
+				      		<button type="button" class="btn btn-price" data-toggle="modal" data-target="servicesModal">Детальніше</button>
+			    		</span>
+				    </th>
+				    <th scope="col">
+				    	<span>
+				    		<span>Кераміка <br> Delux Premium</span>
+				      		<button type="button" class="btn btn-price" data-toggle="modal" data-target="servicesModal">Детальніше</button>
+				    	</span>
+				    </th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row" class="table-img">
+			      	<img src="src/img/car-icon-1.jpg" alt="price-img-1">
+			      	<span>Клас Mini</span>
+			      	<button type="button" id="btn-pr-srv-1" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+			      </th>
+			      <td><div>4500 грн.</div></td>
+			      <td><div>150 $</div></td>
+			      <td><div>150 $</div></td>
+			    </tr>
+			    <tr>
+			      <th scope="row" class="table-img">
+			      	<img src="src/img/car-icon-2.png" alt="price-img-2">
+			      	<span>Клас Sedan</span>
+			      	<button type="button" id="btn-pr-srv-2" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+			      </th>
+			      <td><div>5000 грн.</div></td>
+			      <td><div>180 $</div></td>
+			      <td><div>200 $</div></td>
+			    </tr>
+			    <tr>
+			      <th scope="row" class="table-img">
+			      	<img src="src/img/car-icon-5.jpg" alt="price-img-3">
+			      	<span>Клас Crossover</span>
+			      	<button type="button" id="btn-pr-srv-3" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+			      </th>
+			      <td><div>6000 грн.</div></td>
+			      <td><div>220 $</div></td>
+			      <td><div>250 $</div></td>
+			    </tr>
+			    <tr>
+			    	<th scope="row" class="table-img">
+			      	  <img src="src/img/car-icon-3.png" alt="price-img-4">
+			      	  <span>Клас Jeep</span>
+			      	<button type="button" id="btn-pr-srv-4" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+			      	</th>
+			      	<td><div>7000 грн.</div></td>
+			      	<td><div>250 $</div></td>
+			        <td><div>300 $</div></td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	</section>
+
+	<section id="how-we-work" class="how-we-work">
+		<div class="container">
+			<h2 class="h2-lt">Як ми працюємо</h2>
+			<div class="row justify-content-center">
+				<div class="hww-item">
+					<div class="hww-img">
+						<img src="src/img/wrk/wrk_1.png" alt="wrk_1.png">
+					</div>
+					<h4>Ви телефонуєте або залишаєте заявку</h4>
+				</div>
+				<div class="hww-item">
+					<div class="hww-img">
+						<img src="src/img/wrk/wrk_2.png" alt="wrk_2.png">
+					</div>
+					<h4>Замовляєте послуги на зручний день та час</h4>
+				</div>
+				<div class="hww-item">
+					<div class="hww-img">
+						<img src="src/img/wrk/wrk_4.png" alt="wrk_4.png">
+					</div>
+					<h4>Ми виконуємо послугу</h4>
+				</div>
+				<div class="hww-item">
+					<div class="hww-img">
+						<img src="src/img/wrk/wrk_5.png" alt="wrk_5.png">
+					</div>
+					<h4>Ви перевіряєте якість надання послуги</h4>
+				</div>
+				<div class="hww-item">
+					<div class="hww-img">
+						<img src="src/img/wrk/wrk_6.png" alt="wrk_6.png">
+					</div>
+					<h4>Ви розраховуєтесь за надання послуги</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="clients" class="clients">
+		<div class="container">
+			<h2 class="h2-sb"><span class="lg-bg">Наші клієнти</span></h2>
+			<div class="row justify-content-center">
+				<img src="src/img/clients/kyivstar-logo.jpg" alt="kyivstar-logo.jpg">
+				<img src="src/img/clients/metro-logo.jpg" alt="metro-logo.jpg">
+				<img src="src/img/clients/victoria-gardens-logo.jpg" alt="victoria-gardens-logo.jpg">
+				<img src="src/img/clients/brocard-logo.jpg" alt="brocard-logo.jpg">
+				<img src="src/img/clients/mercedes-benz-logo.jpg" alt="mercedes-benz-logo.jpg">
+				<img src="src/img/clients/lvivske-logo.gif" alt="lvivske-logo.gif">
+				<img src="src/img/clients/lviv-logo.jpg" alt="lviv-logo.jpg">
+				<img src="src/img/clients/mark-logo.png" alt="mark-logo.png">
+				<img src="src/img/clients/riel-logo.jpg" alt="riel-logo.jpg">
+				<img src="src/img/clients/pizzacelentano-logo.jpg" alt="pizzacelentano-logo.jpg">
+				<img src="src/img/clients/turkish-airlines-logo.jpg" alt="turkish-airlines-logo.jpg">
+				<img src="src/img/clients/dnister-logo.jpg" alt="dnister-logo.jpg">
+				<img src="src/img/clients/astoria-logo.png" alt="astoria-logo.png">
+				<img src="src/img/clients/antoshka-logo.jpg" alt="antoshka-logo.jpg">
+				<img src="src/img/clients/foxtrot-logo.jpg" alt="foxtrot-logo.jpg">
+				<img src="src/img/clients/yaponakhata-logo.jpg" alt="yaponakhata-logo.jpg">
+				<img src="src/img/clients/avalon-logo.png" alt="avalon-logo.png">
+				<img src="src/img/clients/pliag-logo.jpg" alt="pliag-logo.jpg">
+				<img src="src/img/clients/fash-logo.png" alt="fash-logo.png">
+			</div>
+		</div>
+	</section>
+
+	<section id="map" class="map">
+		<div class="container">
+			<h2><span class="lg-bg">Ми на карті</span></h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d10301.997613109359!2d23.967878044747675!3d49.79547817159687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x473ae7a7370d948b%3A0x2a544eb639c674b2!2z0KLQpiAi0JLRltC60YLQvtGA0ZbRjyDQk9Cw0YDQtNC10L3RgSIsINCb0YzQstGW0LIsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgNzkwMDA!3m2!1d49.806616!2d23.981513!4m5!1s0x473ae651b5ab5325%3A0x2eff8f569d5d0ae5!2z0KXRltC80YfQuNGB0YLQutCwINGB0LDQu9C-0L3RgyDQsNCy0YLQviDQhNCy0YDQvtCc0LjQudC60LAsINCy0YPQu9C40YbRjyDQm9C10YHRliDQo9C60YDQsNGX0L3QutC4LCAxOCwg0KHQvtC60ZbQu9GM0L3QuNC60LgsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDRl9C90LAsIDgxMTMw!3m2!1d49.7846364!2d23.973991599999998!5e0!3m2!1suk!2sua!4v1551539350919" allowfullscreen></iframe>
+		</div>
+	</section>
+
+	<section id="reviews" class="reviews">
+		<div class="container">
+			<h2 class="">Відгуки</h2>
+			<div class="row">
+				<div class="reviews-carousel">
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-1.jpg" alt="review-1.jpg">
+						</div>
+						<h3>TARAS SHANAYDA</h3>
+						<p>Виконали повну хімчистку салону. Opel Astra. Якість дуже висока. До того чистив на Шип-шині, в євромийці на тому ж рівні, а може й краще. Всі плями відійшли. Салон як новий. Власник мийки був на місці...</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-2.jpg" alt="review-2.jpg">
+						</div>
+						<h3>MARYNA KLOCHANYK</h3>
+						<p>Робила хімчистку салону свого Міні Купера. Почистили якісно та дешево. Приємний персонал. Рекомендую!</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-3.jpg" alt="review-3.jpg">
+						</div>
+						<h3>ТАРАС ТАРАТУЩЕНКО</h3>
+						<p>Просили лишити відгук. Робили повну чистку toyota camry світлий салон у важкому стані. Сервісом та якістю задоволений всі плями відійшли, салон став свіжий і чистий. Якістю хімчистки задоволений. Рек...</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-4.jpg" alt="review-4.jpg">
+						</div>
+						<h3>ANDRIY KOVAL</h3>
+						<p>Зробили хімчистку мого 15 річного пасата. Салон відчистили ідеально, всі плями багаторічної давності відійшли. Роботою задоволений. Можу впевнено рекомедувати.</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-5.jpg" alt="review-5.jpg">
+						</div>
+						<h3>Наталія Чобанюк</h3>
+						<p>Хімчисткою залишилась дуже задоволеною, ні сліду ні запаху від плісняви не залишилось, тай салон став як новий. Буду також рекомендувати знайомим.</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-6.jpg" alt="review-6.jpg">
+						</div>
+						<h3>Ruslan Oganian</h3>
+						<p>Виконали повну хімчистку автосало MITSUBISHI Lancer Х . Авто було дуже занедбане, оскільки перевозили купу всілякого будівельного матеріалу для дачі. Авто забрав на другий день просто в ідеальному стані. Ніби з автосалону!Рекомендую.</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-7.jpg" alt="review-7.jpg">
+						</div>
+						<h3>Serhiy Shekhovtsov</h3>
+						<p>Робив хімічистку авто, зробили швидко та якісно. Відношення до клієнта теж на висоті. Всім задоволений!</p>
+					</div>
+					<div class="review">
+						<div class="review-img">
+							<img src="src/img/reviews/review-8.jpg" alt="review-8.jpg">
+						</div>
+						<h3>Oleg Kr-k</h3>
+						<p>Заїзжав на повну чистку салону. Авто SY Kyron. Відновили салон краще ніж був із салону. Вдячний хлопцям за якісну роботу. Буду рекомендувати.</p>
+					</div>
+                </div>
+            </div>
+		</div>
+	</section>
+
+	<section id="contacts" class="contacts">
+		<div class="container">
+			<h2>Залишились питання?<br>Телефонуйте нам</h2>
+			<img src="src/img/kyivstar-icon.png" alt="kyivstar-icon.png">
+			<div class="contacts-phone"><a href="tel:+380972189000">097 218-9000</a></div>
+			<div class="alternative">або замовте дзвінок онлайн</div>
+			<button type="button" class="btn main-btn main-btn-big" data-toggle="modal" data-target="#orderCallModal">Замовити дзвінок</button>
+		</div>
+	</section>
+
+	<footer id="footer" class="footer">
+		<div class="footer-info">
+		  <div class="container">
+			  <div class="row justify-content-between align-items-center">
+				  <div class="footer_social-networks">
+					  <a href="https://www.instagram.com/carlux.detailing/">
+						  <img src="src/img/instagram-icon.png" alt="instagram-icon.png">
+						  <span>@carlux.detailing</span>
+					  </a>
+					  <a href="viber://add?number=0972189000">
+						  <img src="src/img/viber-icon.png" alt="viber-icon.png">
+						  <span>097 218-9000</span>
+					  </a>
+				  </div>
+				  <div class="brand-info">
+					  <div class="logo-footer">
+						  <img src="src/img/logo.png" alt="header-logo">
+					  </div>
+					  <div class="adress">
+						  <p>Detailing студія - CarLux</p>
+						  <p>Адреса:</p>
+						  <p>с. Сокільники, вул. Лесі Українки 17</p>
+						  <p>м. Львів, вул. Наукова 2д</p>
+					  </div>
+				  </div>
+			  </div>
+			</div>
+		</div>
+	  <div class="copyright"><a href="carlux.com.ua">carlux.com.ua</a></div>
+	</footer>
+
+	<script src="src/js/jquery-3.3.1.min.js"></script>
+	<script src="src/bootstrap/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="src/js/inputmask-jquery-plugin/jquery.inputmask.bundle.js"></script>
+	<script src="src/colorbox/jquery.colorbox.js"></script>
+	<script src="src/js/services.js"></script>
+	<script src="src/js/script.js"></script>
+</body>
+</html>
