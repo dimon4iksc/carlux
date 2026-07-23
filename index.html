@@ -534,79 +534,95 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 		</div>
 	</section>
 
-	<section id="prices" class="prices">
+	<section id="prices" class="prices prices-v2">
 		<div class="container">
 			<h2 class="h2-sb">
 				<span class="dg-bg">ДЕТЕЙЛІНГ ПОСЛУГИ</span><br>
 				<span class="db-bg">Наші ціни</span>
 			</h2>
-			<table class="table">
-			  <thead>
-			    <tr>
-			    	<th></th>
-				    <th scope="col">
-				    	<span>
-				    		<span>Хімчистка салону авто <br> Delux Premium</span>
-				     		<button type="button" class="btn btn-price" data-toggle="modal" data-target="#comparisonModal">Детальніше</button>
-				    	</span>
-				    </th>
-			    	<th scope="col">
-			    		<span>
-			    			<span>Полірування авто <br> Delux Premium</span>
-				      		<button type="button" class="btn btn-price" data-toggle="modal" data-target="servicesModal">Детальніше</button>
-			    		</span>
-				    </th>
-				    <th scope="col">
-				    	<span>
-				    		<span>Кераміка <br> Delux Premium</span>
-				      		<button type="button" class="btn btn-price" data-toggle="modal" data-target="servicesModal">Детальніше</button>
-				    	</span>
-				    </th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row" class="table-img">
-			      	<img src="src/img/car-icon-1.jpg" alt="price-img-1">
-			      	<span>Клас Mini</span>
-			      	<button type="button" id="btn-pr-srv-1" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
-			      </th>
-			      <td><div>4500 грн.</div></td>
-			      <td><div>150 $</div></td>
-			      <td><div>150 $</div></td>
-			    </tr>
-			    <tr>
-			      <th scope="row" class="table-img">
-			      	<img src="src/img/car-icon-2.png" alt="price-img-2">
-			      	<span>Клас Sedan</span>
-			      	<button type="button" id="btn-pr-srv-2" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
-			      </th>
-			      <td><div>5000 грн.</div></td>
-			      <td><div>180 $</div></td>
-			      <td><div>200 $</div></td>
-			    </tr>
-			    <tr>
-			      <th scope="row" class="table-img">
-			      	<img src="src/img/car-icon-5.jpg" alt="price-img-3">
-			      	<span>Клас Crossover</span>
-			      	<button type="button" id="btn-pr-srv-3" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
-			      </th>
-			      <td><div>6000 грн.</div></td>
-			      <td><div>220 $</div></td>
-			      <td><div>250 $</div></td>
-			    </tr>
-			    <tr>
-			    	<th scope="row" class="table-img">
-			      	  <img src="src/img/car-icon-3.png" alt="price-img-4">
-			      	  <span>Клас Jeep</span>
-			      	<button type="button" id="btn-pr-srv-4" class="btn btn-price btn-price-red btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
-			      	</th>
-			      	<td><div>7000 грн.</div></td>
-			      	<td><div>250 $</div></td>
-			        <td><div>300 $</div></td>
-			    </tr>
-			  </tbody>
-			</table>
+
+			<div class="pv2-table">
+				<div class="pv2-row pv2-head">
+					<div class="pv2-cell pv2-cell-logo"></div>
+					<div class="pv2-cell pv2-col-1">
+						<div class="pv2-icon pv2-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="9" height="10" rx="2"/><path d="M13 11h5a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-5"/><path d="M8 17v3M8 4v3"/></svg></div>
+						<div class="pv2-title">ХІМЧИСТКА<br>САЛОНУ АВТО</div>
+						<div class="pv2-tier"><b>DELUX</b> PREMIUM</div>
+						<div class="pv2-note">*Вартість у грн</div>
+					</div>
+					<div class="pv2-cell pv2-col-2">
+						<div class="pv2-icon pv2-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 6.5l3 3L8 19l-4 1 1-4 9.5-9.5Z"/><path d="M13 8l3 3"/></svg></div>
+						<div class="pv2-title">ПОЛІРУВАННЯ<br>АВТО</div>
+						<div class="pv2-tier"><b>DELUX</b> PREMIUM</div>
+						<div class="pv2-note">*Вартість у грн</div>
+					</div>
+					<div class="pv2-cell pv2-col-3">
+						<div class="pv2-icon pv2-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12l3 5-9 13L3 8l3-5Z"/><path d="M3 8h18M9 3l3 5-3 13M15 3l-3 5 3 13"/></svg></div>
+						<div class="pv2-title">КЕРАМІКА</div>
+						<div class="pv2-tier"><b>DELUX</b> PREMIUM</div>
+						<div class="pv2-note">*Вартість у $</div>
+					</div>
+				</div>
+
+				<div class="pv2-row">
+					<div class="pv2-cell pv2-cell-logo">
+						<img src="src/img/car-icon-1.jpg" alt="Mini">
+						<span>MINI</span>
+						<button type="button" id="btn-pr-srv-1" class="btn pv2-order btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+					</div>
+					<div class="pv2-cell pv2-col-1"><span class="pv2-price">4500<b>грн</b></span></div>
+					<div class="pv2-cell pv2-col-2"><span class="pv2-price">150$</span></div>
+					<div class="pv2-cell pv2-col-3"><span class="pv2-price">150$</span></div>
+				</div>
+
+				<div class="pv2-row">
+					<div class="pv2-cell pv2-cell-logo">
+						<img src="src/img/car-icon-2.png" alt="Sedan">
+						<span>SEDAN</span>
+						<button type="button" id="btn-pr-srv-2" class="btn pv2-order btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+					</div>
+					<div class="pv2-cell pv2-col-1"><span class="pv2-price">5000<b>грн</b></span></div>
+					<div class="pv2-cell pv2-col-2"><span class="pv2-price">180$</span></div>
+					<div class="pv2-cell pv2-col-3"><span class="pv2-price">200$</span></div>
+				</div>
+
+				<div class="pv2-row">
+					<div class="pv2-cell pv2-cell-logo">
+						<img src="src/img/car-icon-5.jpg" alt="Crossover">
+						<span>CROSSOVER<em>(mini jeep)</em></span>
+						<button type="button" id="btn-pr-srv-3" class="btn pv2-order btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+					</div>
+					<div class="pv2-cell pv2-col-1"><span class="pv2-price">6000<b>грн</b></span></div>
+					<div class="pv2-cell pv2-col-2"><span class="pv2-price">220$</span></div>
+					<div class="pv2-cell pv2-col-3"><span class="pv2-price">250$</span></div>
+				</div>
+
+				<div class="pv2-row pv2-row-last">
+					<div class="pv2-cell pv2-cell-logo">
+						<img src="src/img/car-icon-3.png" alt="Jeep">
+						<span>JEEP</span>
+						<button type="button" id="btn-pr-srv-4" class="btn pv2-order btn-pr-srv" data-toggle="modal" data-target="#makeOrderModal">Замовити</button>
+					</div>
+					<div class="pv2-cell pv2-col-1"><span class="pv2-price">7000<b>грн</b></span></div>
+					<div class="pv2-cell pv2-col-2"><span class="pv2-price">250$</span></div>
+					<div class="pv2-cell pv2-col-3"><span class="pv2-price">300$</span></div>
+				</div>
+			</div>
+
+			<div class="pv2-footer">
+				<div class="pv2-badge">
+					<div class="pv2-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h4l1 3H8l1-3Z"/><path d="M8 6h6v4l2 11H6L8 10V6Z"/></svg></div>
+					<div><b>Професійна техніка та хімія</b><span>сучасне обладнання та сертифікована хімія</span></div>
+				</div>
+				<div class="pv2-badge">
+					<div class="pv2-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+					<div><b>Гарантія на послуги від CARLUX</b><span>якість, якій можна довіряти</span></div>
+				</div>
+				<div class="pv2-badge">
+					<div class="pv2-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+					<div><b>Термін виконання 1 день</b><span>швидко, якісно, без зайвого очікування</span></div>
+				</div>
+			</div>
 		</div>
 	</section>
 	

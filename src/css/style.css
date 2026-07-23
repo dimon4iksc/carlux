@@ -2403,3 +2403,265 @@ a[href^="tel:"]:hover {
 .top-header {
 	border-bottom: 2px solid #0b63c9;
 }
+
+/* Фон сайту — явно білий */
+html,
+body {
+	background-color: #ffffff;
+}
+
+/* ===== НОВА ТАБЛИЦЯ ЦІН (у стилі надісланого макета) ===== */
+.pv2-table {
+	margin-top: 30px;
+	border-radius: 16px;
+	overflow: hidden;
+	background: #fff;
+}
+.pv2-row {
+	display: grid;
+	grid-template-columns: 1.1fr 1fr 1fr 1fr;
+}
+.pv2-head .pv2-col-1,
+.pv2-head .pv2-col-2 {
+	background: #0b1526;
+	box-shadow: inset 0 -2px 12px rgba(11,99,201,.55);
+}
+.pv2-head .pv2-col-3 {
+	background: #1c0f33;
+	box-shadow: inset 0 -2px 14px rgba(147,51,234,.55);
+}
+.pv2-head .pv2-cell {
+	padding: 22px 14px 18px;
+	text-align: center;
+	border-bottom: 2px solid transparent;
+}
+.pv2-head .pv2-col-1,
+.pv2-head .pv2-col-2 {
+	border-bottom: 2px solid #0b63c9;
+}
+.pv2-head .pv2-col-3 {
+	border-bottom: 2px solid #9333ea;
+}
+.pv2-icon {
+	width: 54px;
+	height: 54px;
+	margin: 0 auto 10px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pv2-icon svg { width: 26px; height: 26px; }
+.pv2-icon-blue {
+	color: #2196f3;
+	border: 1.5px solid #2196f3;
+	box-shadow: 0 0 14px rgba(33,150,243,.65);
+}
+.pv2-icon-purple {
+	color: #b06bff;
+	border: 1.5px solid #b06bff;
+	box-shadow: 0 0 14px rgba(176,107,255,.65);
+}
+.pv2-title {
+	color: #fff;
+	font-weight: 800;
+	font-size: 1em;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+.pv2-tier {
+	margin-top: 6px;
+	font-size: .85em;
+	color: #fff;
+	font-weight: 600;
+}
+.pv2-tier b { color: #2196f3; }
+.pv2-col-3 .pv2-tier b { color: #b06bff; }
+.pv2-note {
+	margin-top: 4px;
+	font-size: .68em;
+	font-style: italic;
+	color: #9aa4b2;
+}
+
+.pv2-cell-logo {
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 10px;
+	position: relative;
+}
+.pv2-cell-logo img {
+	width: 100%;
+	max-width: 190px;
+	border-radius: 8px;
+	margin-bottom: 8px;
+}
+.pv2-cell-logo span {
+	font-weight: 800;
+	letter-spacing: .5px;
+	color: #0b1526;
+	border-bottom: 2px solid #0b1526;
+	padding-bottom: 3px;
+	font-size: .95em;
+}
+.pv2-cell-logo span em {
+	display: block;
+	font-style: normal;
+	font-weight: 700;
+	font-size: .6em;
+	color: #676767;
+	border: 0;
+}
+.pv2-order {
+	margin-top: 10px;
+	background: #0b63c9;
+	color: #fff;
+	border: 0;
+	border-radius: 6px;
+	padding: 6px 18px;
+	font-size: .8em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.pv2-order:hover {
+	background: #4d2f8f;
+}
+
+.pv2-row:not(.pv2-head) .pv2-col-1 {
+	background: linear-gradient(180deg, #0d1a30, #060c17);
+}
+.pv2-row:not(.pv2-head) .pv2-col-2 {
+	background: #000;
+}
+.pv2-row:not(.pv2-head) .pv2-col-3 {
+	background: linear-gradient(180deg, #2a1245, #170a26);
+}
+.pv2-row:not(.pv2-head) .pv2-cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	border-top: 1px solid rgba(255,255,255,.06);
+}
+.pv2-price {
+	font-size: 1.7em;
+	font-weight: 800;
+	color: #fff;
+}
+.pv2-col-2 .pv2-price {
+	color: #2196f3;
+}
+.pv2-col-3 .pv2-price {
+	color: #0b1526;
+	text-shadow: 0 0 2px rgba(255,255,255,.4);
+}
+.pv2-price b {
+	display: inline-block;
+	margin-left: 6px;
+	background: #2196f3;
+	color: #fff;
+	font-size: .5em;
+	font-weight: 700;
+	padding: 3px 7px;
+	border-radius: 5px;
+	vertical-align: middle;
+}
+.pv2-row-last .pv2-cell {
+	border-bottom-left-radius: 0;
+}
+
+.pv2-footer {
+	margin-top: 22px;
+	background: linear-gradient(90deg, #0b1526, #0d1a30);
+	border-radius: 14px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	box-shadow: 0 0 20px rgba(11,99,201,.25);
+}
+.pv2-badge {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 18px 16px;
+	border-left: 1px solid rgba(255,255,255,.1);
+}
+.pv2-badge:first-child { border-left: 0; }
+.pv2-badge-icon {
+	width: 42px;
+	height: 42px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	border: 1.5px solid #2196f3;
+	color: #2196f3;
+	box-shadow: 0 0 10px rgba(33,150,243,.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pv2-badge-icon svg { width: 20px; height: 20px; }
+.pv2-badge b {
+	display: block;
+	color: #fff;
+	font-size: .82em;
+	line-height: 1.3;
+}
+.pv2-badge span {
+	display: block;
+	color: #9aa4b2;
+	font-size: .68em;
+	margin-top: 3px;
+}
+
+@media (max-width: 767.98px) {
+	.pv2-row { grid-template-columns: 1fr; }
+	.pv2-head .pv2-cell { border-bottom: 2px solid; }
+	.pv2-cell-logo { padding: 20px; }
+	.pv2-footer { grid-template-columns: 1fr; }
+	.pv2-badge { border-left: 0; border-top: 1px solid rgba(255,255,255,.1); }
+	.pv2-badge:first-child { border-top: 0; }
+}
+
+/* ===== "НАШІ ПОСЛУГИ" — темна наві-гама ===== */
+.service {
+	background: linear-gradient(180deg, #0d1a30, #060c17);
+	box-shadow: 0 0 18px rgba(11,99,201,.18);
+}
+.service-img {
+	border-bottom: 1px solid #2196f3;
+}
+.service .btn-service {
+	border: 1px solid #2196f3;
+	color: #fff;
+}
+.service .btn-service:hover {
+	background: #2196f3;
+}
+
+/* ===== ФУТЕР — темна наві-гама з акцентом ===== */
+.footer-info {
+	background: linear-gradient(180deg, #0b1526, #000);
+	border-top: 2px solid #0b63c9;
+	box-shadow: 0 0 20px rgba(11,99,201,.25);
+}
+.footer_social-networks {
+	border-left: 1px solid rgba(255,255,255,.25);
+}
+.footer .adress {
+	border-left: 1px solid rgba(255,255,255,.25);
+}
+
+/* ===== Neon glow для іконок кроків хімчистки (узгодження з новим макетом) ===== */
+.dtl-step-icon {
+	box-shadow: 0 0 12px rgba(33,150,243,.6);
+	color: #2196f3;
+	border-color: #2196f3;
+}
+.dtl-step-dark {
+	background: linear-gradient(180deg, #0d1a30, #060c17);
+}
+.dtl-badge-icon {
+	color: #2196f3;
+}
