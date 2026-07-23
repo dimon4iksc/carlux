@@ -2336,3 +2336,70 @@ a[href^="tel:"]:hover {
 		grid-template-columns: 1fr;
 	}
 }
+
+/* ===== Тонша верхня панель (лого + меню) — ПК і мобільна ===== */
+.logo-header img {
+	width: 60px;
+}
+.menu-header {
+	padding: 6px 0;
+}
+@media (min-width: 992px) {
+	.navbar-nav {
+		padding: 8px 0;
+	}
+}
+
+/* ===== ЄДИНА КОЛІРНА ТЕМА (синьо-чорна з мінімальним фіолетовим акцентом) ===== */
+
+/* Кнопка "Замовити дзвінок" / "Замовити" — верхня панель, hero-форма, модалки */
+.btn.main-btn {
+	background: radial-gradient(ellipse at top, rgba(120, 190, 255, .35), #0b63c9),
+	linear-gradient(to top, #0b63c9 0%, #063c82 100%);
+}
+.btn.main-btn:hover {
+	background: radial-gradient(ellipse at top, rgba(180, 140, 255, .35), #4d2f8f),
+	linear-gradient(to top, #4d2f8f 0%, #2c1866 100%);
+}
+
+/* Заголовок форми "Залиште Ваш телефон..." у hero */
+.form-title {
+	background: linear-gradient(0deg, #063c82 0, #0b63c9 100%);
+}
+
+/* Поля вводу форми — синій тон під тему */
+.form-body input,
+.form-body select {
+	background: linear-gradient(90deg, #1e78c9 0, #0b63c9 100%);
+	box-shadow: 0 1px 0 0 rgba(255,255,255,.75), inset 1px 1px 0 0 rgba(6,60,130,1);
+}
+
+/* Телефонна панель угорі — акцент при наведенні */
+a[href^="tel:"]:hover {
+	background-color: #0b63c9;
+}
+
+/* Таблиця цін: колонка "Хімчистка салону авто" — синя (замість сірої) */
+.prices .table tbody td:nth-child(2) div,
+.prices .table thead th:nth-child(2) {
+	background-color: #0b63c9;
+}
+/* колонка "Кераміка" лишається фіолетовою (мінімальний акцент) — без змін */
+
+/* Кнопки "Замовити" в рядках таблиці цін — синій замість червоного */
+.prices .btn-price-red {
+	background-color: #0b63c9;
+	border-color: #0b63c9;
+}
+.prices .btn-price-red:hover {
+	background-color: #063c82;
+	border-color: #063c82;
+}
+.prices .btn-price {
+	background-color: #0b63c9;
+}
+
+/* Тонкий акцентний бордер під білою панеллю з телефоном/соцмережами */
+.top-header {
+	border-bottom: 2px solid #0b63c9;
+}
