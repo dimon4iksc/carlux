@@ -1,0 +1,139 @@
+/* ==========================================================================
+   MODERN-UI.CSS — шар покращення адаптивності та UX
+   Підключається ПІСЛЯ style.css і НЕ змінює:
+   - кольорову схему логотипу
+   - кольори блоку цін (pv2-*)
+   - фон сторінки (вже білий, заданий у style.css)
+   - текстовий контент
+   Лише сучасніша поведінка верстки, м'які тіні/переходи, коректний mobile UX.
+   ========================================================================== */
+
+/* --- Плавний скрол і коректний відступ під фіксовану шапку при переході по якорях --- */
+html {
+	scroll-behavior: smooth;
+}
+section[id] {
+	scroll-margin-top: 100px;
+}
+
+/* --- Захист від горизонтального скролу на будь-яких екранах --- */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+img, svg, video, iframe {
+	max-width: 100%;
+	height: auto;
+}
+
+/* --- М'які переходи для інтерактивних елементів (без зміни кольорів) --- */
+a,
+button,
+.btn,
+.service,
+.review,
+.partner-img,
+.why-we-icon,
+.pv2-order,
+.pv2-badge,
+.dtl-step,
+.clients img,
+.footer_social-networks a {
+	transition: transform .22s ease, box-shadow .22s ease, opacity .22s ease;
+}
+
+/* --- Легка "картковість": м'які тіні та скруглення для існуючих блоків --- */
+.review,
+.service,
+.dtl-step {
+	border-radius: 14px;
+	box-shadow: 0 6px 22px rgba(0, 0, 0, .08);
+}
+
+.review:hover,
+.service:hover,
+.dtl-step:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+}
+
+.partner-img,
+.clients img {
+	border-radius: 10px;
+}
+
+/* --- Кнопки: акуратний "ліфт" при наведенні, кольори не чіпаємо --- */
+.btn:hover,
+.pv2-order:hover,
+.service .btn-service:hover {
+	transform: translateY(-2px);
+}
+
+/* --- Тінь під фіксованою шапкою для відчуття глибини --- */
+.fixed-nav .top-header,
+.top-header {
+	box-shadow: 0 2px 14px rgba(0, 0, 0, .06);
+}
+
+/* --- Комфортні тап-зони на мобільних (мінімум 44px за рекомендаціями Apple/Google) --- */
+@media (max-width: 767.98px) {
+	.btn,
+	button,
+	a.btn,
+	input[type="submit"],
+	.navbar-toggler {
+		min-height: 44px;
+	}
+	.navbar-toggler {
+		padding: 10px;
+	}
+}
+
+/* --- Поля вводу: 16px запобігає авто-зуму в Safari на iPhone --- */
+@media (max-width: 767.98px) {
+	input,
+	select,
+	textarea {
+		font-size: 16px !important;
+	}
+}
+
+/* --- Коректні відступи контейнера на дуже вузьких екранах --- */
+@media (max-width: 400px) {
+	.container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+/* --- Комфортна ширина контенту на дуже великих (desktop 1600px+) моніторах --- */
+@media (min-width: 1600px) {
+	.container {
+		max-width: 1360px;
+	}
+}
+
+/* --- Доступність: видима рамка фокусу при навігації з клавіатури --- */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+	outline: 2px solid #0b63c9;
+	outline-offset: 2px;
+}
+
+/* --- Модалки замовлення: трохи повітря і скруглення на мобільних --- */
+@media (max-width: 575.98px) {
+	.modal-dialog {
+		margin: 12px;
+	}
+	.modal-content {
+		border-radius: 14px;
+	}
+}
+
+/* --- Прайс-таблиця: акуратніші скруглення на маленьких екранах --- */
+@media (max-width: 380px) {
+	.pv2-table {
+		border-radius: 12px;
+	}
+}
