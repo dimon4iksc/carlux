@@ -2552,7 +2552,7 @@ body {
 	background: #000;
 }
 .pv2-row:not(.pv2-head) .pv2-col-3 {
-	background: linear-gradient(180deg, #2a1245, #170a26);
+	background: linear-gradient(180deg, #8f4db5, #640999);
 }
 .pv2-row:not(.pv2-head) .pv2-cell {
 	display: flex;
