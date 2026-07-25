@@ -83,12 +83,20 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 		      <div class="modal-body">
 		        <div class="form-body" action="send.php" method="post">
 		        	<div class="input-item">
-						<input id="auto" type="text" name="auto" required>
+						<select id="auto" name="auto" required>
+							<option value="" disabled selected>Оберіть категорію авто</option>
+							<option value="Mini">Mini</option>
+							<option value="Sedan">Sedan</option>
+							<option value="Crossover">Crossover</option>
+							<option value="Jeep">Jeep</option>
+						</select>
 					</div>
 		        	<div class="input-item">
 		        		<select name="service" id="service" required>
-		        			<option value="Standart+" selected>Standart+</option>
-		        			<option value="Standart LUX">Standart LUX</option>
+		        			<option value="" disabled selected>Оберіть послугу</option>
+		        			<option value="Хімчистка салону авто">Хімчистка салону авто</option>
+		        			<option value="Полірування авто">Полірування авто</option>
+		        			<option value="Кераміка">Кераміка</option>
 		        		</select>
 					</div>
 					<div class="input-item">

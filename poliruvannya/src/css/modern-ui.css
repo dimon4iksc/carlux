@@ -202,3 +202,80 @@ button:focus-visible,
 	opacity: 0;
 	pointer-events: none;
 }
+
+/* ==========================================================================
+   ЄДИНА КОЛІРНА ТЕМА ДЛЯ ВСІХ ФОРМ/МОДАЛОК САЙТУ
+   Замість строкатих зелених шапок і суцільно-синіх полів (старий шаблон) —
+   темно-синя шапка та білі поля, узгоджені з рештою сайту (pv2-таблиця,
+   блок послуг). Кольори логотипу та блоку цін не чіпаємо.
+   ========================================================================== */
+.modal-content {
+	background-color: #fff;
+	border-radius: 16px;
+	overflow: hidden;
+	border: none;
+}
+
+.modal .modal-header {
+	background: linear-gradient(180deg, #0d1a30, #060c17);
+	color: #fff;
+}
+
+.modal .modal-header .close {
+	background-color: rgba(255, 255, 255, .14);
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	opacity: 1;
+}
+
+.modal .modal-header .close span {
+	color: #fff;
+}
+
+.modal .modal-body,
+.modal .modal-footer {
+	background: #fff;
+}
+
+.form-body input,
+.form-body select {
+	background: #fff;
+	color: #0b1526;
+	border: 1.5px solid #d7dee6;
+	box-shadow: none;
+	text-transform: none;
+	border-radius: 8px;
+}
+
+.form-body input:focus,
+.form-body select:focus {
+	border-color: #0b63c9;
+	outline: none;
+}
+
+.form-body select {
+	color: #0b1526;
+}
+
+.form-body select option[disabled] {
+	color: #8a94a3;
+}
+
+.form-body input::placeholder {
+	color: #8a94a3;
+	text-transform: none;
+}
+.form-body input::-webkit-input-placeholder { color: #8a94a3; }
+.form-body input::-moz-placeholder { color: #8a94a3; opacity: 1; }
+.form-body input:-moz-placeholder { color: #8a94a3; }
+.form-body input:-ms-input-placeholder { color: #8a94a3; }
+
+.btn.main-btn {
+	background: #0b63c9;
+	box-shadow: 0 8px 22px rgba(11, 99, 201, .3);
+}
+
+.btn.main-btn:hover {
+	background: #094e9e;
+}
