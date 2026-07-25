@@ -191,3 +191,14 @@ button:focus-visible,
 		box-shadow: 0 10px 28px rgba(0, 0, 0, .14);
 	}
 }
+
+/* --- Honeypot-поле проти ботів: видиме для скриптів, приховане для людей --- */
+.hp-field {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	pointer-events: none;
+}
