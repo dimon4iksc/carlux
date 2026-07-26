@@ -283,7 +283,7 @@ button:focus-visible,
 
 /* --- Компактний футер: лого+адреса зліва, соцмережі справа, менша висота --- */
 .footer-info {
-	padding: 18px 0;
+	padding: 22px 0;
 }
 
 .footer-row {
@@ -297,13 +297,13 @@ button:focus-visible,
 .footer-brand {
 	display: flex;
 	align-items: center;
-	gap: 15px;
+	gap: 18px;
 	text-align: left;
 }
 
 .footer-brand .logo-footer {
 	flex: 0 0 auto;
-	width: 55px;
+	width: 72px;
 }
 
 .footer-brand .logo-footer img {
@@ -313,40 +313,48 @@ button:focus-visible,
 
 .footer-brand .adress {
 	border-left: 1px solid #fff;
-	padding: 0 0 0 15px;
+	padding: 0 0 0 18px;
 	margin: 0;
 }
 
 .footer-brand .adress p {
 	margin: 0;
-	font-size: .65em;
+	font-size: .9em;
 	line-height: 1.5;
 	color: #fff;
 	font-weight: bold;
+}
+
+.footer-brand .adress p.footer-title {
+	font-size: 1em;
 }
 
 .footer_social-networks {
 	border-left: 1px solid #fff;
 	width: auto;
 	margin: 0;
-	padding: 0 0 0 20px;
+	padding: 0 0 0 22px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 8px;
+	gap: 10px;
 }
 
 .footer_social-networks a:first-child {
 	margin-bottom: 0;
 }
 
+.footer_social-networks a span {
+	font-size: .9em;
+}
+
 .footer_social-networks a img {
-	width: 26px;
+	width: 38px;
 }
 
 .footer .copyright {
-	padding: 8px 15px;
-	font-size: .7em;
+	padding: 10px 15px;
+	font-size: .8em;
 }
 
 @media (max-width: 767.98px) {
