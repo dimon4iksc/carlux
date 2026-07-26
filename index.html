@@ -385,16 +385,16 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				<div class="col-12 col-md-5">
 					<div class="service service-2">
 						<div class="service-img"></div>
-						<h3>Хімчистка салону авто</h3>
-						<p>Проесійна хімчистка салону авто. <br> Видалення плям та запахів. <br> Відновлення салону до стану новго авто.</p>
+						<h3><?= htmlspecialchars($cms['texts']['service_1_title']) ?></h3>
+						<p><?= $cms['texts']['service_1_desc'] ?></p>
 						<button type="button" id="btn-service-2" class="btn btn-service" data-toggle="modal" data-target="#servicesModal">Детальніше</button>
 					</div>
 				</div>
 				<div class="col-12 col-md-5">
 					<div class="service service-1">
 						<div class="service-img"></div>
-						<h3>Полірування кузову</h3>
-						<p><span>Професійне полірування кузову. <br> Відновлення ЛКП до стану нового авто. <br> Системою #1 у світі - Rupes.</span></p>
+						<h3><?= htmlspecialchars($cms['texts']['service_2_title']) ?></h3>
+						<p><span><?= $cms['texts']['service_2_desc'] ?></span></p>
 						<button type="button" id="btn-service-1" class="btn btn-service" data-toggle="modal" data-target="#servicesModal">Детальніше</button>
 					</div>
 				</div>
@@ -548,26 +548,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 	<section id="about-us" class="about-us">
 		<div class="container">
 			<h2>Про нас | CarLux Detailing</h2>
-			<p><strong>CarLux</strong> - це сучасна детейлінг студія із досвідом роботи понад 5 років у сфері надання послуг полірування кузову авто та детейлінг хімчистки.</p>
-			<p><strong>Якість послуг</strong> гарантована нашим досвідом та європейськими стандартами, за якими працює ЄвроМийка.</p>
-			<p>Наша мета через сайт – проінформувати Вас про особливості та технології хімчистки: килимів, м’яких меблів та салону авто.</p>
-			<p><strong>Детальніше про CarLux Detailing:</strong></p>
-			<p><strong>Наша робота</strong></p>
-			<ul>
-				<li>Гарантуємо нашим клієнтам, що вони отримають професійні послуги високого рівня.</li>
-				<li>виконані роботи попередньо оцінює менеджер;</li>
-			</ul>
-			<p><strong>Наш персонал</strong></p>
-			<ul>
-				<li>штат високо кваліфікованих працівників;</li>
-				<li>Контролюємо якість виконання замовлення на усіх етапах.</li>
-			</ul>
-			<p><strong>Обладнання</strong></p>
-			<ul>
-				<li>використовуємо виключно професійну техніку та хімічні засоби провідних світових виробників</li>
-			</ul>
-			<p><strong>Цінуємо наших Клієнтів, на кожне наступне замовлення ми надаємо знижку 20%. Телефонуйте просто зараз та дізнайтеся всю необхідну додаткову інформацію, що Вас цікавить.</strong></p>
-			<p><strong>Увага! У роботі використовуємо лище Гіпоалергенну хімію!</strong></p>
+			<?= $cms['texts']['about_us_html'] ?>
 		</div>
 	</section>
 
@@ -688,7 +669,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				  <div class="footer_social-networks">
 					  <a href="https://www.instagram.com/carlux.detailing/">
 						  <img src="src/img/instagram-icon.png" alt="instagram-icon.png">
-						  <span>@carlux.detailing</span>
+						  <span><?= htmlspecialchars($cms['texts']['footer_instagram_handle']) ?></span>
 					  </a>
 					  <a href="viber://add?number=0972189000">
 						  <img src="src/img/viber-icon.png" alt="viber-icon.png">
@@ -702,8 +683,8 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 					  <div class="adress">
 						  <p>Detailing студія - CarLux</p>
 						  <p>Адреса:</p>
-						  <p>с. Сокільники, вул. Лесі Українки 17</p>
-						  <p>м. Львів, вул. Наукова 2д</p>
+						  <p><?= htmlspecialchars($cms['texts']['footer_address_line1']) ?></p>
+						  <p><?= htmlspecialchars($cms['texts']['footer_address_line2']) ?></p>
 					  </div>
 				  </div>
 			  </div>

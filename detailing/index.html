@@ -385,16 +385,16 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				<div class="col-12 col-md-5">
 					<div class="service service-2">
 						<div class="service-img"></div>
-						<h3>Хімчистка салону авто</h3>
-						<p>Проесійна хімчистка салону авто. <br> Видалення плям та запахів. <br> Відновлення салону до стану новго авто.</p>
+						<h3><?= htmlspecialchars($cms['texts']['service_1_title']) ?></h3>
+						<p><?= $cms['texts']['service_1_desc'] ?></p>
 						<button type="button" id="btn-service-2" class="btn btn-service" data-toggle="modal" data-target="#servicesModal">Детальніше</button>
 					</div>
 				</div>
 				<div class="col-12 col-md-5">
 					<div class="service service-1">
 						<div class="service-img"></div>
-						<h3>Полірування кузову</h3>
-						<p><span>Професійне полірування кузову. <br> Відновлення ЛКП до стану нового авто. <br> Системою #1 у світі - Rupes.</span></p>
+						<h3><?= htmlspecialchars($cms['texts']['service_2_title']) ?></h3>
+						<p><span><?= $cms['texts']['service_2_desc'] ?></span></p>
 						<button type="button" id="btn-service-1" class="btn btn-service" data-toggle="modal" data-target="#servicesModal">Детальніше</button>
 					</div>
 				</div>
@@ -700,7 +700,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				  <div class="footer_social-networks">
 					  <a href="https://www.instagram.com/carlux.detailing/">
 						  <img src="src/img/instagram-icon.png" alt="instagram-icon.png">
-						  <span>@carlux.detailing</span>
+						  <span><?= htmlspecialchars($cms['texts']['footer_instagram_handle']) ?></span>
 					  </a>
 					  <a href="viber://add?number=0972189000">
 						  <img src="src/img/viber-icon.png" alt="viber-icon.png">
@@ -714,8 +714,8 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 					  <div class="adress">
 						  <p>Detailing студія - CarLux</p>
 						  <p>Адреса:</p>
-						  <p>с. Сокільники, вул. Лесі Українки 17</p>
-						  <p>м. Львів, вул. Наукова 2д</p>
+						  <p><?= htmlspecialchars($cms['texts']['footer_address_line1']) ?></p>
+						  <p><?= htmlspecialchars($cms['texts']['footer_address_line2']) ?></p>
 					  </div>
 				  </div>
 			  </div>

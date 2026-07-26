@@ -138,7 +138,7 @@ label {
   font-size: 14px;
   color: #445;
 }
-label input[type=text], label input[type=password], label input[type=number] {
+label input[type=text], label input[type=password], label input[type=number], label textarea {
   display: block;
   width: 100%;
   margin-top: 6px;
@@ -146,6 +146,10 @@ label input[type=text], label input[type=password], label input[type=number] {
   border: 1px solid var(--border);
   border-radius: 6px;
   font-size: 14px;
+}
+label textarea {
+  font-family: inherit;
+  resize: vertical;
 }
 .btn-primary {
   background: linear-gradient(90deg, var(--accent), var(--purple));
