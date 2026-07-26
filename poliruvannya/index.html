@@ -1,3 +1,7 @@
+<?php
+$cms = json_decode(file_get_contents(__DIR__ . '/../data/content.json'), true);
+$cms_page = 'poliruvannya';
+?>
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
 <head>
@@ -296,7 +300,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 					<div class="header-call">
 						<div class="phones-header">
 							<div class="phones">
-								<span><a href="tel:+380972189000">097 218-9000</a></span>
+								<span><a href="<?= "tel:" . htmlspecialchars($cms['phone_href']) ?>"><?= htmlspecialchars($cms['phone_display']) ?></a></span>
 							</div>
 						</div>
 						<div class="ask-question-header">
@@ -353,8 +357,8 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				</div>
 
 				<div class="banner-form">
-					<h1><span class="dg-bg"><span class="w">ЗАМОВТЕ ПРОФЕСІЙНЕ</span>ПОЛІРУВАННЯ АВТО</span></h1>
-					<p class="text-small"><span>Повна мийка у подарунок</span></p>
+					<h1><span class="dg-bg"><span class="w"><?= htmlspecialchars($cms['texts']['hero_highlight_poliruvannya']) ?></span> <?= htmlspecialchars($cms['texts']['hero_rest_poliruvannya']) ?></span></h1>
+					<p class="text-small"><span><?= htmlspecialchars($cms['texts']['hero_sub_poliruvannya']) ?></span></p>
 
 					<div class="row no-gutters">
 						<div class="call-form">
@@ -509,8 +513,27 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				<span class="db-bg">Наші ціни</span>
 			</h2>
 
-			<div class="pv2-photo">
-				<img src="src/img/price-table.jpg" alt="Таблиця цін CarLux Detailing: хімчистка салону, полірування авто, кераміка" loading="lazy">
+			<div class="pv2-cards">
+				<table class="pv2-price-table">
+					<thead>
+						<tr>
+							<th>Тип авто</th>
+							<th>Хімчистка</th>
+							<th>Полірування</th>
+							<th>Кераміка</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php foreach ($cms['prices'] as $row): ?>
+						<tr>
+							<td><?= htmlspecialchars($row['category']) ?></td>
+							<td><?= (int)$row['chemistry'] ?> <?= htmlspecialchars($row['chemistry_unit']) ?></td>
+							<td><?= (int)$row['polish'] ?> <?= htmlspecialchars($row['polish_unit']) ?></td>
+							<td><?= (int)$row['ceramic'] ?> <?= htmlspecialchars($row['ceramic_unit']) ?></td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 
 			<div class="pv2-cta">
@@ -681,7 +704,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 		<div class="container">
 			<h2>Залишились питання?<br>Телефонуйте нам</h2>
 			<img src="src/img/kyivstar-icon.png" alt="kyivstar-icon.png">
-			<div class="contacts-phone"><a href="tel:+380972189000">097 218-9000</a></div>
+			<div class="contacts-phone"><a href="<?= "tel:" . htmlspecialchars($cms['phone_href']) ?>"><?= htmlspecialchars($cms['phone_display']) ?></a></div>
 			<div class="alternative">або замовте дзвінок онлайн</div>
 			<button type="button" class="btn main-btn main-btn-big" data-toggle="modal" data-target="#orderCallModal">Замовити дзвінок</button>
 		</div>
