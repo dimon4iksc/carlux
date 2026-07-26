@@ -9,27 +9,20 @@ function save_content($data) {
     file_put_contents(CONTENT_FILE, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
+$mediaMap   = require __DIR__ . '/includes/media-map.php';
+$categories = require __DIR__ . '/includes/media-categories.php';
+
 $content = load_content();
 $message = '';
-$error = '';
-$tab = $_GET['tab'] ?? 'prices';
+$error   = '';
+$tab     = $_GET['tab'] ?? 'texts';
 
 // -------- Обробка форм --------
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (isset($_POST['save_prices'])) {
-        foreach ($content['prices'] as $i => $row) {
-            $content['prices'][$i]['chemistry'] = (int)($_POST['chemistry'][$i] ?? $row['chemistry']);
-            $content['prices'][$i]['polish']    = (int)($_POST['polish'][$i] ?? $row['polish']);
-            $content['prices'][$i]['ceramic']   = (int)($_POST['ceramic'][$i] ?? $row['ceramic']);
-        }
-        save_content($content);
-        $message = 'Ціни збережено.';
-        $tab = 'prices';
-
-    } elseif (isset($_POST['save_texts'])) {
-        $content['phone_href']   = trim($_POST['phone_href']);
-        $content['phone_display']= trim($_POST['phone_display']);
+    if (isset($_POST['save_texts'])) {
+        $content['phone_href']    = trim($_POST['phone_href']);
+        $content['phone_display'] = trim($_POST['phone_display']);
         foreach ($content['texts'] as $key => $val) {
             if (isset($_POST['texts'][$key])) {
                 $content['texts'][$key] = trim($_POST['texts'][$key]);
@@ -41,41 +34,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } elseif (isset($_POST['upload_photo'])) {
         $slot = $_POST['slot'] ?? '';
-        $allowed = [
-            'logo'      => 'src/img/logo.png',
-            'logo_big'  => 'src/img/logo-2.png',
-        ];
-        if (!isset($allowed[$slot])) {
+        $tab  = 'photos';
+
+        if (!isset($mediaMap[$slot])) {
             $error = 'Невідоме поле фото.';
         } elseif (empty($_FILES['photo']['tmp_name']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
             $error = 'Оберіть файл зображення для завантаження.';
         } else {
             $tmp = $_FILES['photo']['tmp_name'];
             $info = @getimagesize($tmp);
-            $okTypes = [IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_WEBP];
+            $okTypes = [IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF, IMAGETYPE_WEBP];
             if (!$info || !in_array($info[2], $okTypes)) {
-                $error = 'Дозволені формати: PNG, JPG, WEBP.';
+                $error = 'Дозволені формати: PNG, JPG, GIF, WEBP.';
             } else {
-                $relPath = $allowed[$slot];
+                $relPath = $mediaMap[$slot]['path'];
                 if (is_uploaded_file($tmp)) {
+                    $copied = false;
                     foreach (SITE_COPIES as $base) {
                         $dest = $base . '/' . $relPath;
                         if (is_dir(dirname($dest))) {
                             copy($tmp, $dest);
+                            $copied = true;
                         }
                     }
-                    $message = 'Фото оновлено на всіх сторінках сайту.';
+                    $message = $copied
+                        ? 'Зображення «' . $mediaMap[$slot]['label'] . '» оновлено на всіх сторінках сайту.'
+                        : 'Не вдалося знайти місце для збереження файлу.';
                 } else {
                     $error = 'Помилка завантаження файлу.';
                 }
             }
         }
-        $tab = 'photos';
     }
 }
 
-$prices = $content['prices'];
-$texts  = $content['texts'];
+$texts = $content['texts'];
+
+// Групуємо медіа-слоти за категоріями у порядку, заданому в media-categories.php
+$grouped = [];
+foreach ($categories as $catKey => $catLabel) {
+    $grouped[$catKey] = [];
+}
+foreach ($mediaMap as $slug => $item) {
+    $grouped[$item['cat']][$slug] = $item;
+}
 ?>
 <!DOCTYPE html>
 <html lang="uk">
@@ -92,38 +94,15 @@ $texts  = $content['texts'];
 </header>
 
 <nav class="tabs">
-    <a href="?tab=prices" class="<?= $tab==='prices'?'active':'' ?>">Ціни</a>
     <a href="?tab=texts" class="<?= $tab==='texts'?'active':'' ?>">Тексти</a>
-    <a href="?tab=photos" class="<?= $tab==='photos'?'active':'' ?>">Фото</a>
+    <a href="?tab=photos" class="<?= $tab==='photos'?'active':'' ?>">Фото сайту</a>
 </nav>
 
 <main class="admin-content">
 <?php if ($message): ?><div class="alert alert-success"><?= htmlspecialchars($message) ?></div><?php endif; ?>
 <?php if ($error): ?><div class="alert alert-error"><?= htmlspecialchars($error) ?></div><?php endif; ?>
 
-<?php if ($tab === 'prices'): ?>
-    <h2>Таблиця цін</h2>
-    <p class="hint">Ці ціни одразу з'являться на сайті (розділ «Наші ціни») на всіх трьох сторінках.</p>
-    <form method="post">
-        <table class="price-table-admin">
-            <thead>
-                <tr><th>Категорія авто</th><th>Хімчистка, грн</th><th>Полірування, $</th><th>Кераміка, $</th></tr>
-            </thead>
-            <tbody>
-            <?php foreach ($prices as $i => $row): ?>
-                <tr>
-                    <td><?= htmlspecialchars($row['category']) ?></td>
-                    <td><input type="number" name="chemistry[<?= $i ?>]" value="<?= (int)$row['chemistry'] ?>" min="0"></td>
-                    <td><input type="number" name="polish[<?= $i ?>]" value="<?= (int)$row['polish'] ?>" min="0"></td>
-                    <td><input type="number" name="ceramic[<?= $i ?>]" value="<?= (int)$row['ceramic'] ?>" min="0"></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-        <button type="submit" name="save_prices" value="1" class="btn-primary">Зберегти ціни</button>
-    </form>
-
-<?php elseif ($tab === 'texts'): ?>
+<?php if ($tab === 'texts'): ?>
     <h2>Тексти сайту</h2>
     <form method="post">
         <fieldset>
@@ -179,30 +158,29 @@ $texts  = $content['texts'];
     </form>
 
 <?php elseif ($tab === 'photos'): ?>
-    <h2>Фото</h2>
-    <p class="hint">Завантажене фото автоматично замінить старе на всіх трьох сторінках сайту (головна, «Хімчистка», «Полірування»).</p>
+    <h2>Фото сайту</h2>
+    <p class="hint">Тут зібрані всі зображення, які використовуються на сайті — від логотипів і фото відгуків до дрібних іконок. Завантажене зображення одразу замінить старе на всіх трьох сторінках сайту (де воно використовується). Натисніть на назву розділу, щоб розгорнути його.</p>
 
-    <div class="photo-slot">
-        <h3>Логотип у шапці сайту</h3>
-        <img src="../src/img/logo.png" alt="поточний логотип" class="current-photo">
-        <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="slot" value="logo">
-            <input type="file" name="photo" accept="image/png,image/jpeg,image/webp" required>
-            <button type="submit" name="upload_photo" value="1" class="btn-primary">Замінити</button>
-        </form>
-    </div>
+    <?php $first = true; foreach ($categories as $catKey => $catLabel): ?>
+        <details class="media-cat" <?= $first ? 'open' : '' ?>>
+            <summary><?= htmlspecialchars($catLabel) ?> <span class="media-cat-count">(<?= count($grouped[$catKey]) ?>)</span></summary>
+            <div class="media-grid">
+                <?php foreach ($grouped[$catKey] as $slug => $item): ?>
+                    <div class="photo-slot media-slot">
+                        <h3><?= htmlspecialchars($item['label']) ?></h3>
+                        <img src="../<?= htmlspecialchars($item['path']) ?>" alt="<?= htmlspecialchars($item['label']) ?>" class="current-photo">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="slot" value="<?= htmlspecialchars($slug) ?>">
+                            <input type="file" name="photo" accept="image/png,image/jpeg,image/gif,image/webp" required>
+                            <button type="submit" name="upload_photo" value="1" class="btn-primary btn-small">Замінити</button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </details>
+    <?php $first = false; endforeach; ?>
 
-    <div class="photo-slot">
-        <h3>Великий логотип на банері (головний екран)</h3>
-        <img src="../src/img/logo-2.png" alt="поточний банер-логотип" class="current-photo">
-        <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="slot" value="logo_big">
-            <input type="file" name="photo" accept="image/png,image/jpeg,image/webp" required>
-            <button type="submit" name="upload_photo" value="1" class="btn-primary">Замінити</button>
-        </form>
-    </div>
-
-    <p class="hint">Потрібно додати більше фото (галерея, іконки послуг тощо)? Напишіть розробнику — це легко розширити.</p>
+    <p class="hint">Потрібно додати ще якесь зображення, якого тут немає (наприклад, нове фото в галерею)? Напишіть розробнику — це легко розширити.</p>
 <?php endif; ?>
 </main>
 </body>

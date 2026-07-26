@@ -1,12 +1,6 @@
 {
   "phone_href": "+380972189000",
   "phone_display": "097 218-9000",
-  "prices": [
-    {"category": "Mini",      "chemistry": 4500, "chemistry_unit": "\u0433\u0440\u043d", "polish": 150, "polish_unit": "$", "ceramic": 150, "ceramic_unit": "$"},
-    {"category": "Sedan",     "chemistry": 5000, "chemistry_unit": "\u0433\u0440\u043d", "polish": 180, "polish_unit": "$", "ceramic": 200, "ceramic_unit": "$"},
-    {"category": "Crossover", "chemistry": 6000, "chemistry_unit": "\u0433\u0440\u043d", "polish": 220, "polish_unit": "$", "ceramic": 250, "ceramic_unit": "$"},
-    {"category": "Jeep",      "chemistry": 7000, "chemistry_unit": "\u0433\u0440\u043d", "polish": 250, "polish_unit": "$", "ceramic": 300, "ceramic_unit": "$"}
-  ],
   "texts": {
     "hero_highlight_main": "ЗАМОВТЕ ПРОФЕСІЙНУ",
     "hero_rest_main": "ХІМЧИСТКУ САЛОНУ АВТО",

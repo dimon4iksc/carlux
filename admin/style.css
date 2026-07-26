@@ -50,7 +50,7 @@ body {
   border-bottom-color: var(--accent);
 }
 .admin-content {
-  max-width: 860px;
+  max-width: 1100px;
   margin: 24px auto;
   padding: 0 24px 60px;
 }
@@ -87,6 +87,42 @@ h2 { margin-top: 0; }
   border-radius: 6px;
   font-size: 14px;
 }
+
+.media-cat {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  padding: 0 18px;
+}
+.media-cat > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 0;
+  font-weight: 700;
+  color: var(--navy-2);
+  font-size: 16px;
+}
+.media-cat > summary::-webkit-details-marker { display: none; }
+.media-cat > summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--accent);
+  transition: transform .15s ease;
+}
+.media-cat[open] > summary::before { transform: rotate(90deg); }
+.media-cat-count { color: #8b93a7; font-weight: 400; font-size: 14px; }
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  padding-bottom: 18px;
+}
+.media-slot { margin-bottom: 0; }
+.media-slot h3 { font-size: 14px; }
+.media-slot .current-photo { max-width: 100%; }
+.btn-small { padding: 8px 14px; font-size: 13px; }
 
 fieldset {
   border: 1px solid var(--border);

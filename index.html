@@ -503,27 +503,8 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 				<span class="db-bg">Наші ціни</span>
 			</h2>
 
-			<div class="pv2-cards">
-				<table class="pv2-price-table">
-					<thead>
-						<tr>
-							<th>Тип авто</th>
-							<th>Хімчистка</th>
-							<th>Полірування</th>
-							<th>Кераміка</th>
-						</tr>
-					</thead>
-					<tbody>
-					<?php foreach ($cms['prices'] as $row): ?>
-						<tr>
-							<td><?= htmlspecialchars($row['category']) ?></td>
-							<td><?= (int)$row['chemistry'] ?> <?= htmlspecialchars($row['chemistry_unit']) ?></td>
-							<td><?= (int)$row['polish'] ?> <?= htmlspecialchars($row['polish_unit']) ?></td>
-							<td><?= (int)$row['ceramic'] ?> <?= htmlspecialchars($row['ceramic_unit']) ?></td>
-						</tr>
-					<?php endforeach; ?>
-					</tbody>
-				</table>
+			<div class="pv2-photo">
+				<img src="src/img/price-table.jpg" alt="Таблиця цін CarLux Detailing: хімчистка салону, полірування авто, кераміка" loading="lazy">
 			</div>
 
 			<div class="pv2-cta">
