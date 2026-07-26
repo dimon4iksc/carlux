@@ -280,3 +280,93 @@ button:focus-visible,
 	background: #094e9e;
 }
 
+
+/* --- Компактний футер: лого+адреса зліва, соцмережі справа, менша висота --- */
+.footer-info {
+	padding: 18px 0;
+}
+
+.footer-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.footer-brand {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	text-align: left;
+}
+
+.footer-brand .logo-footer {
+	flex: 0 0 auto;
+	width: 55px;
+}
+
+.footer-brand .logo-footer img {
+	width: 100%;
+	display: block;
+}
+
+.footer-brand .adress {
+	border-left: 1px solid #fff;
+	padding: 0 0 0 15px;
+	margin: 0;
+}
+
+.footer-brand .adress p {
+	margin: 0;
+	font-size: .65em;
+	line-height: 1.5;
+	color: #fff;
+	font-weight: bold;
+}
+
+.footer_social-networks {
+	border-left: 1px solid #fff;
+	width: auto;
+	margin: 0;
+	padding: 0 0 0 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 8px;
+}
+
+.footer_social-networks a:first-child {
+	margin-bottom: 0;
+}
+
+.footer_social-networks a img {
+	width: 26px;
+}
+
+.footer .copyright {
+	padding: 8px 15px;
+	font-size: .7em;
+}
+
+@media (max-width: 767.98px) {
+	.footer-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.footer-brand {
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer-brand .adress {
+		border-left: none;
+		padding-left: 0;
+		text-align: center;
+		margin-top: 8px;
+	}
+	.footer_social-networks {
+		border-left: none;
+		padding-left: 0;
+		align-items: center;
+	}
+}

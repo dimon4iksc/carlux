@@ -585,7 +585,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 
 	<section id="clients" class="clients">
 		<div class="container">
-			<h2 class="h2-sb"><span class="lg-bg">Наші клієнти</span></h2>
+			<h2 class="h2-sb"><span class="db-bg">Наші клієнти</span></h2>
 			<div class="row justify-content-center">
 				<img src="src/img/clients/kyivstar-logo.jpg" alt="kyivstar-logo.jpg">
 				<img src="src/img/clients/metro-logo.jpg" alt="metro-logo.jpg">
@@ -612,7 +612,7 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 
 	<section id="map" class="map">
 		<div class="container">
-			<h2><span class="lg-bg">Ми на карті</span></h2>
+			<h2><span class="db-bg">Ми на карті</span></h2>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d10301.997613109359!2d23.967878044747675!3d49.79547817159687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x473ae7a7370d948b%3A0x2a544eb639c674b2!2z0KLQpiAi0JLRltC60YLQvtGA0ZbRjyDQk9Cw0YDQtNC10L3RgSIsINCb0YzQstGW0LIsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgNzkwMDA!3m2!1d49.806616!2d23.981513!4m5!1s0x473ae651b5ab5325%3A0x2eff8f569d5d0ae5!2z0KXRltC80YfQuNGB0YLQutCwINGB0LDQu9C-0L3RgyDQsNCy0YLQviDQhNCy0YDQvtCc0LjQudC60LAsINCy0YPQu9C40YbRjyDQm9C10YHRliDQo9C60YDQsNGX0L3QutC4LCAxOCwg0KHQvtC60ZbQu9GM0L3QuNC60LgsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDRl9C90LAsIDgxMTMw!3m2!1d49.7846364!2d23.973991599999998!5e0!3m2!1suk!2sua!4v1551539350919" allowfullscreen></iframe>
 		</div>
 	</section>
@@ -696,7 +696,18 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 	<footer id="footer" class="footer">
 		<div class="footer-info">
 		  <div class="container">
-			  <div class="row justify-content-between align-items-center">
+			  <div class="footer-row">
+				  <div class="footer-brand">
+					  <div class="logo-footer">
+						  <img src="src/img/logo.png" alt="header-logo">
+					  </div>
+					  <div class="adress">
+						  <p class="footer-title">Detailing студія - CarLux</p>
+						  <p>Адреса:</p>
+						  <p><?= htmlspecialchars($cms['texts']['footer_address_line1']) ?></p>
+						  <p><?= htmlspecialchars($cms['texts']['footer_address_line2']) ?></p>
+					  </div>
+				  </div>
 				  <div class="footer_social-networks">
 					  <a href="https://www.instagram.com/carlux.detailing/">
 						  <img src="src/img/instagram-icon.png" alt="instagram-icon.png">
@@ -706,17 +717,6 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 						  <img src="src/img/viber-icon.png" alt="viber-icon.png">
 						  <span>+38 097 218-9000</span>
 					  </a>
-				  </div>
-				  <div class="brand-info">
-					  <div class="logo-footer">
-						  <img src="src/img/logo.png" alt="header-logo">
-					  </div>
-					  <div class="adress">
-						  <p>Detailing студія - CarLux</p>
-						  <p>Адреса:</p>
-						  <p><?= htmlspecialchars($cms['texts']['footer_address_line1']) ?></p>
-						  <p><?= htmlspecialchars($cms['texts']['footer_address_line2']) ?></p>
-					  </div>
 				  </div>
 			  </div>
 			</div>
