@@ -281,9 +281,9 @@ button:focus-visible,
 }
 
 
-/* --- Компактний футер: лого+адреса зліва, соцмережі справа, менша висота --- */
+/* --- Футер: лого+адреса зліва, соцмережі справа, розмір як на референсі --- */
 .footer-info {
-	padding: 22px 0;
+	padding: 32px 0;
 }
 
 .footer-row {
@@ -291,19 +291,19 @@ button:focus-visible,
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 24px;
 }
 
 .footer-brand {
 	display: flex;
 	align-items: center;
-	gap: 18px;
+	gap: 22px;
 	text-align: left;
 }
 
 .footer-brand .logo-footer {
 	flex: 0 0 auto;
-	width: 72px;
+	width: 110px;
 }
 
 .footer-brand .logo-footer img {
@@ -313,31 +313,31 @@ button:focus-visible,
 
 .footer-brand .adress {
 	border-left: 1px solid #fff;
-	padding: 0 0 0 18px;
+	padding: 0 0 0 22px;
 	margin: 0;
 }
 
 .footer-brand .adress p {
 	margin: 0;
-	font-size: .9em;
+	font-size: 1.15em;
 	line-height: 1.5;
 	color: #fff;
 	font-weight: bold;
 }
 
 .footer-brand .adress p.footer-title {
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
 .footer_social-networks {
 	border-left: 1px solid #fff;
 	width: auto;
 	margin: 0;
-	padding: 0 0 0 22px;
+	padding: 0 0 0 26px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 10px;
+	gap: 14px;
 }
 
 .footer_social-networks a:first-child {
@@ -345,16 +345,16 @@ button:focus-visible,
 }
 
 .footer_social-networks a span {
-	font-size: .9em;
+	font-size: 1.15em;
 }
 
 .footer_social-networks a img {
-	width: 38px;
+	width: 46px;
 }
 
 .footer .copyright {
-	padding: 10px 15px;
-	font-size: .8em;
+	padding: 12px 15px;
+	font-size: .9em;
 }
 
 @media (max-width: 767.98px) {
@@ -376,5 +376,30 @@ button:focus-visible,
 		border-left: none;
 		padding-left: 0;
 		align-items: center;
+	}
+}
+
+/* --- Секція "Використовуємо техніку та хімію": картки як у блоці "Наші послуги" --- */
+.we-use {
+	background-color: #fff;
+}
+
+.we-use-item .item {
+	background-color: #313640;
+	border-radius: 14px;
+	box-shadow: 0 6px 22px rgba(0, 0, 0, .08);
+	padding: 20px 25px;
+	margin-bottom: 15px;
+}
+
+.we-use h3,
+.we-use p {
+	color: #fff;
+}
+
+@media (min-width: 992px) {
+	.we-use-item .item {
+		margin-bottom: 0;
+		height: 100%;
 	}
 }
