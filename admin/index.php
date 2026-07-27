@@ -31,7 +31,9 @@ function backup_content_before_save() {
     // Тримаємо тільки останні 20 бекапів, щоб папка не росла нескінченно.
     $files = glob($backupDir . '/content-*.json');
     if ($files && count($files) > 20) {
-        usort($files, fn($a, $b) => filemtime($a) <=> filemtime($b));
+        usort($files, function ($a, $b) {
+            return filemtime($a) <=> filemtime($b);
+        });
         $toDelete = array_slice($files, 0, count($files) - 20);
         foreach ($toDelete as $f) { @unlink($f); }
     }
