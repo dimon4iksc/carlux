@@ -576,3 +576,36 @@ button:focus-visible,
 	border: none;
 	padding-top: 10px;
 }
+
+/* ==========================================================================
+   HERO — виправлення: картка виходила за межі banner знизу; забагато
+   порожнього місця ліворуч; текст у картці був нерівний (частина left,
+   частина center). Варіант C: фіксована, але вища секція + вертикальне
+   центрування картки; весь вміст картки — по центру.
+   ========================================================================== */
+
+@media (min-width: 992px) {
+	.banner {
+		height: 760px;
+		padding-top: 0;
+		display: flex;
+		align-items: center;
+	}
+	.banner > .container {
+		width: 100%;
+	}
+}
+
+/* Весь вміст картки — по центру (заголовок, підзаголовок, підпис форми, поля, кнопка) */
+.banner .banner-form {
+	text-align: center;
+}
+.banner .banner-form h1 {
+	text-align: center;
+}
+.banner .banner-form .text-small {
+	text-align: center;
+}
+.banner .form-title {
+	text-align: center;
+}
