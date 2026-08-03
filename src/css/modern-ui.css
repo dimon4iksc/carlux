@@ -597,15 +597,32 @@ button:focus-visible,
 }
 
 /* Весь вміст картки — по центру (заголовок, підзаголовок, підпис форми, поля, кнопка) */
-.banner .banner-form {
+.banner .banner-form,
+.banner .banner-form h1,
+.banner .banner-form .text-small,
+.banner .banner-form .text-small span,
+.banner .form-title,
+.banner .call-form,
+.banner .bg-call-form,
+.banner .form-body,
+.banner .form-body .input-place {
+	text-align: center !important;
+}
+
+/* Поля вводу та кнопка — центруємо як блоки, не лише текст усередині них */
+.banner .form-body .input-item {
+	max-width: 420px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	float: none !important;
+}
+.banner .form-body .input-item input {
 	text-align: center;
 }
-.banner .banner-form h1 {
-	text-align: center;
+.banner .button-place {
+	text-align: center !important;
 }
-.banner .banner-form .text-small {
-	text-align: center;
-}
-.banner .form-title {
-	text-align: center;
+.banner .button-place .btn {
+	margin: 0 auto;
+	float: none;
 }
