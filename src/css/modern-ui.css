@@ -648,25 +648,57 @@ button:focus-visible,
 }
 
 /* ==========================================================================
-   HERO — КАРТКА ПО ЦЕНТРУ ФОНУ (не збоку)
-   Лого переноситься над карткою (менше, по центру), картка стає
-   єдиним центральним елементом на фоні фото.
+   HERO — ЛОГО ЗЛІВА, КАРТКА СПРАВА
+   На великих екранах лого і картка стоять поруч в один ряд.
+   На планшетах/телефонах лого лишається зверху, картка — під ним
+   (щоб нічого не наїжджало одне на одне і не обрізалось).
    ========================================================================== */
+.banner .container .row {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center !important;
+}
+.banner .banner-logo {
+	width: 220px;
+	max-width: 60%;
+	margin: 0 auto 24px;
+}
+.banner .banner-logo img {
+	width: 100%;
+	height: auto;
+}
+.banner .banner-form {
+	width: 100%;
+	max-width: 640px;
+}
+
 @media (min-width: 992px) {
 	.banner .container .row {
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: nowrap;
 		align-items: center;
-		justify-content: center !important;
+		justify-content: space-between !important;
 	}
 	.banner .banner-logo {
-		width: 220px !important;
-		margin: 0 auto 24px;
-	}
-	.banner .banner-logo img {
-		width: 100%;
+		width: 28%;
+		max-width: 280px;
+		flex: 0 0 auto;
+		margin: 0;
 	}
 	.banner .banner-form {
-		width: 100%;
-		max-width: 640px;
+		width: 62%;
+		max-width: 560px;
+		margin: 0 0 0 auto;
+	}
+}
+
+@media (min-width: 1200px) {
+	.banner .banner-logo {
+		width: 26%;
+		max-width: 320px;
+	}
+	.banner .banner-form {
+		width: 58%;
+		max-width: 600px;
 	}
 }
