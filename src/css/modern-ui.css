@@ -403,3 +403,176 @@ button:focus-visible,
 		height: 100%;
 	}
 }
+
+/* ==========================================================================
+   ШАПКА — менше конкуруючих елементів, чіткіша ієрархія
+   (текст, посилання, alt, meta не змінюються — лише вигляд)
+   ========================================================================== */
+
+/* Іконка телефону: проста лінійна замість стороннього логотипу-стокової іконки */
+.phones span::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b63c9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+	background-size: 20px;
+	background-position: center;
+}
+
+/* "Замовити дзвінок" у верхній панелі — вторинна дія (контурна), щоб не конкурувати з головним CTA в hero */
+.top-header .btn.main-btn {
+	background: transparent !important;
+	border: 1.5px solid #0b63c9;
+	color: #0b63c9 !important;
+	box-shadow: none !important;
+	font-weight: 600;
+	-webkit-text-fill-color: #0b63c9;
+}
+.top-header .btn.main-btn:hover {
+	background: #0b63c9 !important;
+	color: #fff !important;
+	-webkit-text-fill-color: #fff;
+}
+
+/* Лого Львова — приглушуємо, щоб не конкурувало з лого CarLux */
+.lviv-header {
+	opacity: .5;
+	filter: grayscale(25%);
+	transition: opacity .2s ease;
+}
+.lviv-header:hover {
+	opacity: .85;
+}
+@media (min-width: 992px) {
+	.lviv-header {
+		width: 34px !important;
+		margin-left: 14px;
+	}
+}
+
+/* Меню: без вертикальних рисок-розділювачів, акуратне підкреслення при наведенні */
+.menu-header .navbar-nav .nav-link::before {
+	display: none !important;
+}
+.menu-header .navbar-nav .nav-link {
+	background: transparent !important;
+}
+.menu-header .navbar-nav .nav-link::after {
+	content: '';
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	bottom: 6px;
+	height: 2px;
+	background: #0b63c9;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform .25s ease;
+}
+.menu-header .navbar-nav .nav-link:hover,
+.menu-header .navbar-nav .nav-link:focus {
+	color: #fff !important;
+}
+.menu-header .navbar-nav .nav-link:hover::after,
+.menu-header .navbar-nav .nav-link.active::after {
+	transform: scaleX(1);
+}
+.menu-header .navbar-nav .active > .nav-link,
+.menu-header .navbar-nav .nav-link.active {
+	background: transparent !important;
+	color: #6fb3ff !important;
+}
+
+/* ==========================================================================
+   HERO — один узгоджений блок замість декількох кольорових плашок,
+   градієнт по фото для контрасту тексту
+   ========================================================================== */
+
+.banner {
+	position: relative;
+}
+.banner::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, rgba(5, 10, 20, .78) 0%, rgba(5, 10, 20, .45) 48%, rgba(5, 10, 20, .12) 78%);
+	pointer-events: none;
+}
+.banner > .container {
+	position: relative;
+	z-index: 1;
+}
+
+/* Логотип у hero — менший і легший, щоб не дублювати лого в шапці на рівних правах */
+@media (min-width: 992px) {
+	.banner .banner-logo {
+		width: 27%;
+	}
+	.banner .banner-logo img {
+		filter: drop-shadow(0 10px 25px rgba(0, 0, 0, .5));
+	}
+}
+
+/* Об'єднуємо заголовок, підзаголовок і форму в одну скляну картку */
+@media (min-width: 992px) {
+	.banner .banner-form {
+		background: rgba(6, 12, 23, .74);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+		border-radius: 18px;
+		padding: 34px 36px 26px;
+		box-shadow: 0 25px 60px rgba(0, 0, 0, .4);
+	}
+}
+@media (max-width: 991.98px) {
+	.banner .banner-form {
+		background: rgba(6, 12, 23, .74);
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+		border-radius: 14px;
+		padding: 22px 18px 18px;
+	}
+}
+
+.banner .banner-form h1 .dg-bg {
+	background: transparent;
+	padding: 0;
+	display: inline;
+}
+.banner .banner-form .text-small {
+	background: transparent;
+	margin-top: 10px;
+}
+.banner .banner-form .text-small span {
+	background: transparent;
+	color: #bcd9ff;
+	padding: 0;
+	font-weight: 600;
+}
+
+.banner .bg-call-form,
+.banner .call-form {
+	background: transparent;
+}
+.banner .bg-call-form:before,
+.banner .call-form:before,
+.banner .bg-call-form::before {
+	display: none;
+}
+.banner .form-title {
+	background: transparent;
+	padding: 18px 0 8px;
+	font-weight: 600;
+	color: #e8f1ff;
+}
+.banner .form-title::before,
+.banner .form-title::after {
+	display: none;
+}
+.banner .form-body {
+	background: transparent;
+	padding: 0;
+}
+.banner .form-body .input-place {
+	margin: 0;
+	background: transparent;
+	border: none;
+	padding-top: 10px;
+}
