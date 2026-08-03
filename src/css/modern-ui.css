@@ -719,3 +719,31 @@ button:focus-visible,
 		max-width: 600px;
 	}
 }
+
+/* ==========================================================================
+   ЗАГОЛОВКИ СЕКЦІЙ — лінії по боках від тексту (варіант C)
+   Колір ліній = colorContent поточного h2 (currentColor), тому автоматично
+   підлаштовується під синій на білому фоні і білий на темних секціях.
+   Виключені особливі варіанти заголовків (h2-sb, h2-lt, dg-bg, db-bg) —
+   у них вже є власне кольорове оформлення.
+   ========================================================================== */
+h2:not(.h2-sb):not(.h2-lt):not(.dg-bg):not(.db-bg) {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+h2:not(.h2-sb):not(.h2-lt):not(.dg-bg):not(.db-bg)::before,
+h2:not(.h2-sb):not(.h2-lt):not(.dg-bg):not(.db-bg)::after {
+	content: '';
+	flex: 1 1 auto;
+	height: 2px;
+	background: currentColor;
+	opacity: .5;
+	border-radius: 2px;
+}
+
+@media (max-width: 575.98px) {
+	h2:not(.h2-sb):not(.h2-lt):not(.dg-bg):not(.db-bg) {
+		gap: 10px;
+	}
+}
