@@ -626,3 +626,23 @@ button:focus-visible,
 	margin: 0 auto;
 	float: none;
 }
+
+/* ==========================================================================
+   БРОНЕБІЙНЕ ЦЕНТРУВАННЯ HERO-КАРТКИ
+   Універсальний селектор перебиває будь-яке інше правило text-align
+   (включно з inline style, якщо воно без !important), незалежно від
+   того, що саме конфліктувало раніше.
+   ========================================================================== */
+.banner .banner-form,
+.banner .banner-form * {
+	text-align: center !important;
+}
+.banner .form-body .input-item,
+.banner .button-place {
+	display: block !important;
+	width: 100% !important;
+	max-width: 420px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	float: none !important;
+}
