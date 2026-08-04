@@ -747,3 +747,102 @@ h2:not(.h2-sb):not(.h2-lt):not(.dg-bg):not(.db-bg)::after {
 		gap: 10px;
 	}
 }
+
+/* ==========================================================================
+   РЕШТА ЗАГОЛОВКІВ — прибираємо старі кольорові "плашки" (dg-bg/db-bg/h2-lt
+   як фон під текстом) і переводимо всі заголовки сайту на єдиний сучасний
+   стиль: чистий колір тексту + лінії по боках. Колір ліній = колір тексту
+   (currentColor), тому одна формула працює і на світлих, і на темних секціях.
+   ========================================================================== */
+
+/* Прибираємо фонові плашки скрізь, де вони траплялись у заголовках.
+   Усі ці розділи ("Хімчистка салону авто", "Наші ціни", "Наші клієнти",
+   "Ми на карті", "Використовуємо техніку та хімію") мають білий фон
+   секції, тому текст заголовка -> фірмовий синій, як і решта h2. */
+h2 .dg-bg,
+h2 .db-bg,
+h2.dg-bg,
+h2.db-bg {
+	background: transparent !important;
+	padding: 0 !important;
+	color: #3a9be0 !important;
+}
+
+/* Лінії по боках для всіх варіантів одиночних заголовків */
+h2.dg-bg,
+h2.db-bg,
+h2.h2-lt {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+h2.dg-bg::before, h2.dg-bg::after,
+h2.db-bg::before, h2.db-bg::after,
+h2.h2-lt::before, h2.h2-lt::after {
+	content: '';
+	flex: 1 1 auto;
+	height: 2px;
+	background: currentColor;
+	opacity: .5;
+	border-radius: 2px;
+}
+
+/* h2-sb: подвійний підпис (напр. "ДЕТЕЙЛІНГ ПОСЛУГИ" + "Наші ціни")
+   або одинарний (напр. "Наші клієнти") */
+h2.h2-sb {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+h2.h2-sb span {
+	background: transparent !important;
+	padding: 0 !important;
+}
+
+/* Один підпис у h2-sb -> звичайний заголовок з лініями по боках */
+h2.h2-sb span:only-child {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	width: 100%;
+	color: #3a9be0;
+}
+h2.h2-sb span:only-child::before,
+h2.h2-sb span:only-child::after {
+	content: '';
+	flex: 1 1 auto;
+	height: 2px;
+	background: currentColor;
+	opacity: .5;
+	border-radius: 2px;
+}
+
+/* Два підписи у h2-sb -> маленька мітка зверху + великий заголовок знизу */
+h2.h2-sb span:first-child:not(:only-child) {
+	font-size: .45em;
+	letter-spacing: 2px;
+	color: #3a9be0;
+}
+h2.h2-sb span:last-child:not(:only-child) {
+	font-size: 1.3em;
+	color: #16232e;
+}
+
+/* Заголовки всередині модалок — без ліній, звичайний вигляд */
+.modal h2 {
+	display: block !important;
+}
+.modal h2::before,
+.modal h2::after {
+	content: none !important;
+}
+
+@media (max-width: 575.98px) {
+	h2.dg-bg,
+	h2.db-bg,
+	h2.h2-lt,
+	h2.h2-sb span:only-child {
+		gap: 10px;
+	}
+}
