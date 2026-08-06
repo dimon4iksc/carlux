@@ -855,64 +855,72 @@ h2.h2-sb span:last-child:not(:only-child) {
    ========================================================================== */
 .about-us {
 	background-image: none;
-	padding: 0;
+	padding: 40px 0;
 	background: linear-gradient(180deg, #0d1a30, #060c17);
 }
-.about-us .container {
-	padding-left: 0;
-	padding-right: 0;
-	max-width: none;
-}
 .about-us-photo {
-	max-width: 760px;
+	max-width: 640px;
 	margin: 0 auto;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 18px 45px rgba(0, 0, 0, .35), 0 0 30px rgba(33, 150, 243, .18);
 }
 .about-us-photo img {
 	display: block;
 	width: 100%;
 	height: auto;
 }
+@media (max-width: 480px) {
+	.about-us {
+		padding: 26px 0;
+	}
+	.about-us-photo {
+		border-radius: 14px;
+	}
+}
 
 /* ==========================================================================
-   БЛОК "ДЕТЕЙЛІНГ-ДОГЛЯД" (carwash) — фото з майстрами (зелені кепки/
-   рукавиці) замінено на власну лінійну SVG-ілюстрацію в синій гамі сайту,
-   без окремої рамки-картки — просто лежить на тлі секції.
+   БЛОК "МАЙСТРИ НАВКОЛО АВТО" (carwash) — фото залишається як є (реальні
+   люди/техніка, колір фото не чіпаємо), але оформлюємо в темно-навy рамку
+   з неоновим підсвіченням, узгоджену з рештою сайту.
    ========================================================================== */
 .carwash {
 	background: linear-gradient(180deg, #0d1a30, #060c17);
-	padding: 40px 0;
-	text-align: center;
+	padding: 36px 0;
 }
-.carwash-illustration {
+.carwash-frame {
+	max-width: 440px;
+	margin: 0 auto;
+	padding: 24px;
+	border-radius: 20px;
+	background: radial-gradient(ellipse at center, rgba(33, 150, 243, .14) 0%, transparent 72%);
+	box-shadow: inset 0 0 0 1px rgba(33, 150, 243, .18), 0 0 34px rgba(33, 150, 243, .2);
+}
+.carwash-frame img {
 	display: block;
 	width: 100%;
-	max-width: 620px;
 	height: auto;
-	margin: 0 auto;
+	filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .45));
 }
 
 /* ==========================================================================
-   БЛОК "ВИКОРИСТОВУЄМО ТЕХНІКУ ТА ХІМІЮ" (we-use) — рівна сітка з 4 карток
-   (лого + 3 переваги), узгоджена з темно-навy+неоновою гамою сайту.
-   Стара верстка на float/display:none замінена на CSS Grid.
+   БЛОК "ВИКОРИСТОВУЄМО ТЕХНІКУ ТА ХІМІЮ" (we-use) — картки замість плаского
+   сірого фону, узгоджені з темно-навy+неоновою гамою сайту (як .service).
+   HTML-структуру не чіпаємо, лише переоформлюємо наявні елементи.
    ========================================================================== */
 .we-use {
 	background: linear-gradient(180deg, #0d1a30, #060c17);
 	padding: 50px 0 46px;
 }
-.we-use .row {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 18px;
-}
 .we-use-item {
-	width: auto;
-	padding: 0;
-	display: block !important;
+	padding: 10px;
+}
+.we-use-item:first-child img {
+	filter: drop-shadow(0 0 20px rgba(33, 150, 243, .4));
 }
 .we-use .item {
 	height: 100%;
-	padding: 26px 20px 22px;
+	padding: 26px 22px 22px;
 	background: rgba(255, 255, 255, .03);
 	border: 1px solid rgba(33, 150, 243, .22);
 	border-radius: 16px;
@@ -936,39 +944,21 @@ h2.h2-sb span:last-child:not(:only-child) {
 	padding: 8px;
 	box-shadow: 0 0 16px rgba(33, 150, 243, .35);
 }
-.we-use .item-logo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.we-use .item-logo img {
-	width: 76px;
-	height: 76px;
-}
 .we-use h3 {
 	text-align: center;
-	font-size: .78em;
 	letter-spacing: .3px;
-	margin: 0 0 8px;
-}
-.we-use .item-logo h3 {
-	margin-bottom: 0;
+	margin-bottom: 8px;
 }
 .we-use p {
 	text-align: center;
 	line-height: 1.5;
 	color: #b9c6d6 !important;
-	margin: 0;
 }
-@media (max-width: 900px) {
-	.we-use .row {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-@media (max-width: 520px) {
-	.we-use .row {
-		grid-template-columns: 1fr;
+@media (min-width: 1024px) {
+	.we-use-item:first-child {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
 
