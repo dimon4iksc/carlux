@@ -874,101 +874,117 @@ h2.h2-sb span:last-child:not(:only-child) {
 }
 
 /* ==========================================================================
-   БЛОК "ДЕТЕЙЛІНГ-ДОГЛЯД" (carwash) — фото з майстрами (зелені кепки/
-   рукавиці) замінено на власну лінійну SVG-ілюстрацію в синій гамі сайту,
-   без окремої рамки-картки — просто лежить на тлі секції.
-   ========================================================================== */
-.carwash {
-	background: linear-gradient(180deg, #0d1a30, #060c17);
-	padding: 40px 0;
-	text-align: center;
-}
-.carwash-illustration {
-	display: block;
-	width: 100%;
-	max-width: 620px;
-	height: auto;
-	margin: 0 auto;
-}
-
-/* ==========================================================================
-   БЛОК "ВИКОРИСТОВУЄМО ТЕХНІКУ ТА ХІМІЮ" (we-use) — рівна сітка з 4 карток
-   (лого + 3 переваги), узгоджена з темно-навy+неоновою гамою сайту.
-   Стара верстка на float/display:none замінена на CSS Grid.
+   БЛОК "ВИКОРИСТОВУЄМО ТЕХНІКУ ТА ХІМІЮ" (we-use) — секція-процес: 3 кроки
+   з іконками у неонових колах, номерами та лінією-конектором між ними,
+   замість старої ілюстрації (carwash) та рівної сітки карток.
    ========================================================================== */
 .we-use {
 	background: linear-gradient(180deg, #0d1a30, #060c17);
-	padding: 50px 0 46px;
+	padding: 56px 0 60px;
 }
-.we-use .row {
+.we-use-eyebrow {
+	text-align: center;
+	color: #3a9be0;
+	font-size: 12px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin: 0 0 8px;
+}
+.we-use-row {
+	position: relative;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 18px;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	max-width: 900px;
+	margin: 40px auto 0;
+}
+.we-use-row::before {
+	content: '';
+	position: absolute;
+	top: 52px;
+	left: 16.6%;
+	right: 16.6%;
+	height: 1px;
+	background: linear-gradient(90deg, rgba(33, 150, 243, 0), rgba(33, 150, 243, .5), rgba(33, 150, 243, 0));
 }
 .we-use-item {
-	width: auto;
-	padding: 0;
-	display: block !important;
+	position: relative;
+	text-align: center;
 }
-.we-use .item {
-	height: 100%;
-	padding: 26px 20px 22px;
-	background: rgba(255, 255, 255, .03);
-	border: 1px solid rgba(33, 150, 243, .22);
-	border-radius: 16px;
-	box-shadow: 0 0 18px rgba(11, 99, 201, .1);
-	transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-.we-use .item:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 0 26px rgba(33, 150, 243, .3);
-	border-color: #2196f3;
-}
-.we-use img {
-	float: none;
-	display: block;
-	width: 60px;
-	height: 60px;
-	object-fit: contain;
-	margin: 0 auto 16px;
-	background: #fff;
-	border-radius: 12px;
-	padding: 8px;
-	box-shadow: 0 0 16px rgba(33, 150, 243, .35);
-}
-.we-use .item-logo {
+.we-use-icon {
+	position: relative;
+	width: 104px;
+	height: 104px;
+	margin: 0 auto 20px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(33, 150, 243, .22), transparent 70%);
 	display: flex;
-	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: transform .22s ease;
+}
+.we-use-icon::before {
+	content: '';
+	position: absolute;
+	inset: 8px;
+	border-radius: 50%;
+	background: #0d1a30;
+	border: 1px solid rgba(33, 150, 243, .4);
+	transition: border-color .22s ease, box-shadow .22s ease;
+}
+.we-use-icon svg {
+	position: relative;
+	width: 34px;
+	height: 34px;
+	color: #3a9be0;
+}
+.we-use-item:hover .we-use-icon {
+	transform: translateY(-4px);
+}
+.we-use-item:hover .we-use-icon::before {
+	border-color: #2196f3;
+	box-shadow: 0 0 22px rgba(33, 150, 243, .35);
+}
+.we-use-num {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: 30px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #2196f3;
+	color: #042c53;
+	font-size: 11px;
+	font-weight: 700;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.we-use .item-logo img {
-	width: 76px;
-	height: 76px;
-}
 .we-use h3 {
 	text-align: center;
-	font-size: .78em;
+	font-size: 1em;
 	letter-spacing: .3px;
-	margin: 0 0 8px;
-}
-.we-use .item-logo h3 {
-	margin-bottom: 0;
+	margin: 0 0 10px;
 }
 .we-use p {
 	text-align: center;
-	line-height: 1.5;
-	color: #b9c6d6 !important;
-	margin: 0;
+	line-height: 1.6;
+	color: #8fa0b5 !important;
+	font-size: .92em;
+	max-width: 240px;
+	margin: 0 auto;
 }
-@media (max-width: 900px) {
-	.we-use .row {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-@media (max-width: 520px) {
-	.we-use .row {
+@media (max-width: 767.98px) {
+	.we-use-row {
 		grid-template-columns: 1fr;
+		gap: 44px;
+	}
+	.we-use-row::before {
+		display: none;
+	}
+	.we-use-num {
+		margin-left: 30px;
 	}
 }
 
