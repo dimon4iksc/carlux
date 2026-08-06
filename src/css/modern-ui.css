@@ -379,31 +379,6 @@ button:focus-visible,
 	}
 }
 
-/* --- Секція "Використовуємо техніку та хімію": картки як у блоці "Наші послуги" --- */
-.we-use {
-	background-color: #fff;
-}
-
-.we-use-item .item {
-	background-color: #313640;
-	border-radius: 14px;
-	box-shadow: 0 6px 22px rgba(0, 0, 0, .08);
-	padding: 20px 25px;
-	margin-bottom: 15px;
-}
-
-.we-use h3,
-.we-use p {
-	color: #fff;
-}
-
-@media (min-width: 992px) {
-	.we-use-item .item {
-		margin-bottom: 0;
-		height: 100%;
-	}
-}
-
 /* ==========================================================================
    ШАПКА — менше конкуруючих елементів, чіткіша ієрархія
    (текст, посилання, alt, meta не змінюються — лише вигляд)
@@ -910,6 +885,10 @@ h2.h2-sb span:last-child:not(:only-child) {
 .we-use-item {
 	position: relative;
 	text-align: center;
+	width: auto !important;
+	display: block !important;
+	float: none !important;
+	margin-right: 0 !important;
 }
 .we-use-icon {
 	position: relative;
