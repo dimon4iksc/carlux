@@ -15,9 +15,10 @@ $(document).ready(function(){
   $(".gallery-img a").colorbox();
 
   $('.video-carousel').slick({
-    infinite: true,
-    slidesToShow: 2,
+    infinite: false,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,

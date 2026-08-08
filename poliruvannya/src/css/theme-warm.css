@@ -91,6 +91,48 @@ h1, h2, h3, h4, .logo-header span, .form-title span {
 }
 .form-body input::placeholder{ color: var(--w-dim) !important; }
 
+/* ---------- заголовки секцій: усі варіанти -> білий (як "Наші послуги") ---------- */
+h2, h3,
+h2 .dg-bg, h2 .db-bg, h2.dg-bg, h2.db-bg,
+h2.h2-sb span,
+h2.h2-sb span:only-child,
+h2.h2-sb span:first-child:not(:only-child),
+h2.h2-sb span:last-child:not(:only-child),
+h2.h2-lt{
+  color: var(--w-text) !important;
+}
+/* ==========================================================================
+   МОБІЛЬНА АДАПТАЦІЯ — гарантія, що нічого не виїжджає за екран
+   ========================================================================== */
+html, body{ overflow-x: hidden !important; max-width: 100vw; }
+*{ -webkit-text-size-adjust: 100%; }
+img, iframe, svg, video{ max-width: 100%; height: auto; }
+.pv2-photo img, .dtl-photo img, .about-us-photo img{ width:100%; height:auto; }
+.video-carousel iframe{ height: auto !important; aspect-ratio: 16/9; }
+
+@media (max-width: 767px){
+  .container{ padding-left:16px !important; padding-right:16px !important; }
+  h2{ font-size: 1.5em !important; line-height:1.3; }
+  h2.h2-sb span:last-child:not(:only-child){ font-size: 1.15em !important; }
+  section{ padding-top: 42px !important; padding-bottom: 42px !important; }
+  .service, .review, .why-we-icon, .info-block{ margin-bottom: 16px; }
+  .order-consultation{ margin: 0 12px !important; padding: 28px 20px !important; }
+  .video-carousel iframe{ height: auto !important; }
+  .clients img{ max-height: 46px; width:auto; }
+  .bg-call-form{ margin-left:10px; margin-right:10px; }
+}
+
+@media (max-width: 480px){
+  h1{ font-size: 1.7em !important; }
+  h2{ font-size: 1.25em !important; }
+  .btn.main-btn, .pv2-cta-btn{ width:100%; text-align:center; }
+}
+
+/* маленький підпис над великим заголовком (напр. "ДЕТЕЙЛІНГ ПОСЛУГИ") трохи приглушений */
+h2.h2-sb span:first-child:not(:only-child){
+  color: var(--w-warm) !important;
+}
+
 /* ---------- services ---------- */
 .our-services{ background: var(--w-bg) !important; }
 .our-services h2, .prices h2, .cleaning-salon h2, .why-we h2, .clients h2, .map h2, .reviews h2, .contacts h2{
@@ -115,6 +157,10 @@ h1, h2, h3, h4, .logo-header span, .form-title span {
 .gallery h2{ color: var(--w-text) !important; }
 .gal-img{ border-radius: 14px !important; overflow:hidden; }
 .video-1, .video-2, .video-3{ border-radius: 14px !important; overflow:hidden; }
+.photo-carousel, .video-carousel{ width:100% !important; max-width:100%; margin:0 auto !important; }
+.video-carousel .slick-track{ margin-left:auto !important; margin-right:auto !important; display:flex !important; }
+.video-carousel .slick-slide{ height:auto !important; }
+.video-carousel .slick-slide > div{ width:100%; }
 
 /* ---------- prices ---------- */
 .prices{ background: var(--w-bg) !important; }
