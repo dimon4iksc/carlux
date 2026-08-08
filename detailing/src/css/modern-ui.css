@@ -1052,3 +1052,23 @@ h2.h2-sb span:last-child:not(:only-child) {
 	background: linear-gradient(145deg, #fb8fc4, #ef5da3);
 	box-shadow: 0 8px 18px rgba(239, 93, 163, .35);
 }
+
+/* --- Меню: щоб усі пункти (включно з "КОНТАКТИ") лишались в один рядок
+   на типових ноутбучних роздільностях (1280–1600px), а не переносились
+   вниз окремим рядком --- */
+@media (min-width: 992px) {
+	.menu-header .navbar-nav .nav-link {
+		margin: 0 4px;
+		padding: 10px 10px;
+		font-size: .92em;
+		white-space: nowrap;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+	.menu-header .navbar-nav .nav-link {
+		margin: 0 2px;
+		padding: 10px 6px;
+		font-size: .82em;
+	}
+}
