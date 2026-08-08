@@ -128,9 +128,61 @@ img, iframe, svg, video{ max-width: 100%; height: auto; }
   .btn.main-btn, .pv2-cta-btn{ width:100%; text-align:center; }
 }
 
+/* ---------- модалки: текст був білим на світлому фоні -> робимо темним і читабельним ---------- */
+.modal-content{ color:#1B2436; }
+.modal .modal-body,
+.modal .modal-body p,
+.modal .modal-body li,
+.modal .modal-body strong,
+.modal .modal-body span{
+  color:#1B2436 !important;
+}
+.modal .modal-body table td, .modal .modal-body table th{
+  color:#1B2436 !important;
+}
+.modal .modal-header .modal-title{ color:#fff !important; }
+/* поля вводу всередині будь-якої модалки (замовлення, дзвінок) */
+.modal .form-body input,
+.modal .form-body select{
+  background:#fff !important;
+  color:#1B2436 !important;
+  border:1px solid #d7dbe3 !important;
+}
+.modal .form-body input::placeholder{ color:#7C8494 !important; }
+.modal .form-body select{ color:#1B2436 !important; }
+.modal .form-body select option{ color:#1B2436; background:#fff; }
+
+/* ---------- клієнти: контрастніше на мобільній ---------- */
+.clients img{
+  box-shadow: 0 0 0 1px rgba(255,255,255,.06);
+}
+@media (max-width: 767px){
+  .clients img{
+    max-height: 56px !important;
+    width:auto !important;
+    padding: 12px !important;
+    box-shadow: 0 4px 14px -4px rgba(0,0,0,.5);
+  }
+}
+
+/* ---------- заголовок "Про нас" — трохи більший відступ зверху ---------- */
+.about-us{ padding-top: 70px !important; }
+@media (max-width: 767px){
+  .about-us{ padding-top: 56px !important; }
+}
+
 /* маленький підпис над великим заголовком (напр. "ДЕТЕЙЛІНГ ПОСЛУГИ") трохи приглушений */
 h2.h2-sb span:first-child:not(:only-child){
   color: var(--w-warm) !important;
+}
+
+/* ---------- лінії по боках для "Наші ціни" (двоскладовий h2-sb) — раніше їх не було ---------- */
+h2.h2-sb span:last-child:not(:only-child){
+  display:flex; align-items:center; gap:18px; width:100%;
+}
+h2.h2-sb span:last-child:not(:only-child)::before,
+h2.h2-sb span:last-child:not(:only-child)::after{
+  content:''; flex:1 1 auto; height:2px; background:currentColor; opacity:.5; border-radius:2px;
 }
 
 /* ---------- services ---------- */
