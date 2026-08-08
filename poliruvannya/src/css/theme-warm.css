@@ -1,0 +1,194 @@
+/* ==========================================================================
+   CarLux — тепла тема (нове візуальне оформлення)
+   Підключається ПІСЛЯ style.css і modern-ui.css та перевизначає лише
+   зовнішній вигляд. Розмітку, форми, класи для JS (slick/colorbox/bootstrap)
+   і SEO-контент НЕ змінює.
+   ========================================================================== */
+
+:root{
+  --w-bg:#0F1420;
+  --w-bg-2:#161C2C;
+  --w-panel:#1B2235;
+  --w-line:#2A3348;
+  --w-text:#F4F1EA;
+  --w-dim:#B9C0D2;
+  --w-accent:#4E7CFA;
+  --w-accent-2:#7C9CFF;
+  --w-warm:#F2A65A;
+  --w-warm-2:#FFCF9E;
+  --w-teal:#5FD8B8;
+}
+
+body{
+  background: radial-gradient(ellipse 900px 500px at 15% -8%, rgba(242,166,90,.09), transparent 60%),
+              radial-gradient(ellipse 1000px 600px at 100% 0%, rgba(78,124,250,.14), transparent 55%),
+              var(--w-bg) !important;
+  color: var(--w-text) !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+}
+
+h1, h2, h3, h4, .logo-header span, .form-title span {
+  font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+}
+
+/* ---------- header ---------- */
+.top-header{ background: var(--w-bg-2) !important; border-bottom: 1px solid var(--w-line); }
+.menu-header{ background: rgba(15,20,32,.86) !important; backdrop-filter: blur(14px); border-bottom: 1px solid var(--w-line); }
+.menu-header.fixed-top{ box-shadow: 0 10px 30px -15px rgba(0,0,0,.6); }
+.phones a, .phones-header a{ color: var(--w-text) !important; font-family:'JetBrains Mono',monospace; }
+.navbar-nav .nav-link{ color: var(--w-dim) !important; font-weight:500; }
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active{ color: var(--w-text) !important; }
+.navbar-nav .nav-link.nav-link-new{ color: var(--w-warm) !important; }
+.logo-header span{ color: var(--w-dim) !important; }
+
+/* ---------- buttons ---------- */
+.btn.main-btn{
+  background: linear-gradient(135deg, var(--w-accent), #3D63D9) !important;
+  border: none !important;
+  border-radius: 100px !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  box-shadow: 0 10px 26px -10px rgba(78,124,250,.6) !important;
+}
+.btn.main-btn:hover{ filter: brightness(1.08); transform: translateY(-1px); }
+.pv2-cta-btn, .btn.pv2-cta-btn{
+  background: linear-gradient(135deg, var(--w-warm), #DE8B3C) !important;
+  color:#241304 !important; border:none !important; border-radius:100px !important;
+  box-shadow: 0 10px 26px -10px rgba(242,166,90,.55) !important;
+}
+
+/* ---------- hero / banner ---------- */
+.banner{
+  position:relative; overflow:hidden;
+  background: linear-gradient(155deg,#1c2338,#0f1420 70%) !important;
+}
+.banner::before{
+  content:""; position:absolute; width:420px; height:420px; border-radius:50%;
+  background: radial-gradient(circle, rgba(242,166,90,.35), rgba(242,166,90,0) 70%);
+  top:-140px; right:-100px; filter: blur(6px); pointer-events:none;
+  animation: w-pulse 5s ease-in-out infinite;
+}
+.banner::after{
+  content:""; position:absolute; width:360px; height:360px; border-radius:50%;
+  background: radial-gradient(circle, rgba(78,124,250,.3), rgba(78,124,250,0) 70%);
+  bottom:-160px; left:-100px; filter: blur(6px); pointer-events:none;
+}
+@keyframes w-pulse{ 0%,100%{opacity:.6; transform:scale(1)} 50%{opacity:1; transform:scale(1.06)} }
+.banner .dg-bg, .banner h1 span{ background:none !important; color: var(--w-text) !important; }
+.banner .dg-bg .w{ color: var(--w-warm-2) !important; }
+.banner p.text-small span{ color: var(--w-dim) !important; }
+.bg-call-form{
+  background: linear-gradient(155deg, var(--w-panel), var(--w-bg-2)) !important;
+  border: 1px solid var(--w-line) !important; border-radius: 20px !important;
+  box-shadow: 0 30px 70px -30px rgba(0,0,0,.55) !important;
+}
+.form-title span{ color: var(--w-text) !important; }
+.form-body input, .form-body select{
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid var(--w-line) !important;
+  color: var(--w-text) !important;
+  border-radius: 10px !important;
+}
+.form-body input::placeholder{ color: var(--w-dim) !important; }
+
+/* ---------- services ---------- */
+.our-services{ background: var(--w-bg) !important; }
+.our-services h2, .prices h2, .cleaning-salon h2, .why-we h2, .clients h2, .map h2, .reviews h2, .contacts h2{
+  color: var(--w-text) !important; background:none !important;
+}
+.service{
+  background: linear-gradient(155deg, var(--w-panel), var(--w-bg-2)) !important;
+  border: 1px solid var(--w-line) !important;
+  border-radius: 20px !important;
+}
+.service:hover{ border-color: var(--w-accent-2) !important; transform: translateY(-4px); }
+.service h3{ color: var(--w-text) !important; }
+.service p{ color: var(--w-dim) !important; }
+.btn-service{
+  background: transparent !important; color: var(--w-warm) !important;
+  border: 1px solid var(--w-line) !important; border-radius: 100px !important;
+}
+.btn-service:hover{ border-color: var(--w-warm) !important; }
+
+/* ---------- gallery ---------- */
+.gallery{ background: var(--w-bg-2) !important; }
+.gallery h2{ color: var(--w-text) !important; }
+.gal-img{ border-radius: 14px !important; overflow:hidden; }
+.video-1, .video-2, .video-3{ border-radius: 14px !important; overflow:hidden; }
+
+/* ---------- prices ---------- */
+.prices{ background: var(--w-bg) !important; }
+.pv2-photo img, .dtl-photo img{
+  border-radius: 18px !important;
+  border: 1px solid var(--w-line) !important;
+  box-shadow: 0 30px 70px -30px rgba(0,0,0,.6) !important;
+}
+
+/* ---------- 8 steps section ---------- */
+.cleaning-salon{ background: var(--w-bg-2) !important; }
+
+/* ---------- about ---------- */
+.about-us{ background: var(--w-bg) !important; }
+.about-us-photo img{ border-radius: 18px !important; border:1px solid var(--w-line) !important; }
+
+/* ---------- order-consultation strip ---------- */
+.order-consultation{
+  background: linear-gradient(120deg,#2A3557,#1A2032) !important;
+  border-radius: 26px; margin: 0 24px;
+}
+.order-consultation p{ color: var(--w-text) !important; }
+
+/* ---------- why-we ---------- */
+.why-we{ background: var(--w-bg) !important; }
+.why-we-icon{
+  background: linear-gradient(155deg, var(--w-panel), var(--w-bg-2)) !important;
+  border: 1px solid var(--w-line) !important; border-radius: 16px !important;
+}
+.why-we p{ color: var(--w-dim) !important; }
+
+/* ---------- clients ---------- */
+.clients{ background: var(--w-bg-2) !important; }
+.clients img{
+  background: #fff !important; border-radius: 12px !important; padding: 10px !important;
+  filter: none !important; opacity: .92;
+}
+
+/* ---------- map ---------- */
+.map{ background: var(--w-bg) !important; }
+.map iframe{ border-radius: 18px !important; border: 1px solid var(--w-line) !important; }
+
+/* ---------- reviews ---------- */
+.reviews{ background: var(--w-bg-2) !important; }
+.review{
+  background: linear-gradient(155deg, var(--w-panel), var(--w-bg-2)) !important;
+  border: 1px solid var(--w-line) !important; border-radius: 20px !important;
+}
+.review h3{ color: var(--w-text) !important; }
+.review p{ color: var(--w-dim) !important; }
+
+/* ---------- contacts strip ---------- */
+.contacts{ background: var(--w-bg) !important; }
+.contacts h2{ color: var(--w-text) !important; }
+.contacts-phone a{ color: var(--w-warm-2) !important; font-family:'JetBrains Mono',monospace; }
+.alternative{ color: var(--w-dim) !important; }
+
+/* ---------- footer ---------- */
+.footer-info{ background: var(--w-bg-2) !important; border-top: 1px solid var(--w-line); }
+.footer-brand .adress p{ color: var(--w-dim) !important; }
+.footer-brand .adress p.footer-title{ color: var(--w-text) !important; }
+.footer_social-networks a span{ color: var(--w-dim) !important; }
+.copyright{ background: var(--w-bg) !important; color: var(--w-dim) !important; }
+.copyright a{ color: var(--w-dim) !important; }
+
+/* ---------- info cards on poliruvannya page ---------- */
+.info-block{
+  background: linear-gradient(155deg, var(--w-panel), var(--w-bg-2));
+  border: 1px solid var(--w-line); border-radius: 20px; padding: 32px;
+}
+.info-block h3{ color: var(--w-text); font-size:18px; margin-bottom:12px; }
+.info-block p, .info-block li{ color: var(--w-dim); font-size:14px; }
+.info-block ul{ padding-left:18px; margin-top:8px; }
+.info-block li{ margin-bottom:6px; }
+@media (max-width: 767px){
+  .polish-info .row{ grid-template-columns: 1fr !important; }
+}
