@@ -122,39 +122,48 @@ button:focus-visible,
 }
 
 /* --- Модалки замовлення: трохи повітря і скруглення на мобільних --- */
+/* Раніше правила нижче програвали за специфічністю селекторам
+   .modal.show .modal-dialog та #servicesModal .modal-dialog (style.css),
+   тому вікна відсувались на 75px / 4.5rem зверху без обмеження висоти
+   і вилазили за межі екрана. Тепер це правило працює на будь-якому
+   розмірі екрана (не лише мобільному) і через !important більше не
+   програє жодному іншому селектору в проєкті, скільки б класів/ID
+   там не додали в майбутньому. Вікно завжди в межах екрана, а якщо
+   контент довгий — прокручується сама середина (modal-body), шапка
+   з хрестиком і кнопка внизу лишаються на місці. */
+.modal-dialog {
+	margin: 12px auto !important;
+	max-width: min(330px, calc(100vw - 24px)) !important;
+	max-height: calc(100% - 24px) !important;
+}
+#servicesModal .modal-dialog {
+	max-width: min(560px, calc(100vw - 24px)) !important;
+}
+#comparisonModal .modal-dialog {
+	max-width: min(720px, calc(100vw - 24px)) !important;
+}
+.modal-dialog-centered {
+	min-height: calc(100% - 24px) !important;
+}
+.modal-content {
+	max-height: calc(100vh - 24px) !important;
+	max-height: calc(100dvh - 24px) !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+.modal-header,
+.modal-footer {
+	flex: 0 0 auto !important;
+}
+.modal-body {
+	flex: 1 1 auto !important;
+	overflow-y: auto !important;
+	-webkit-overflow-scrolling: touch !important;
+}
+
 @media (max-width: 575.98px) {
-	/* Раніше ці правила програвали за специфічністю селекторам
-	   .modal.show .modal-dialog (style.css) та #servicesModal .modal-dialog
-	   (style.css) — тому на мобільній модалки й далі відсувались на 75px /
-	   4.5rem зверху і не мали обмеження висоти, через що вилазили за межі
-	   екрана. Дублюємо ті самі селектори тут (той самий рівень специфічності,
-	   але файл підключений пізніше -> перемагає), плюс додаємо max-height
-	   з внутрішнім скролом по modal-body, щоб контент завжди вміщався. */
-	.modal-dialog,
-	.modal.show .modal-dialog,
-	#servicesModal .modal-dialog {
-		margin: 12px auto;
-		max-width: calc(100% - 24px);
-		max-height: calc(100% - 24px);
-	}
-	.modal-dialog-centered {
-		min-height: calc(100% - 24px);
-	}
 	.modal-content {
 		border-radius: 14px;
-		max-height: calc(100vh - 24px);
-		max-height: calc(100dvh - 24px);
-		display: flex;
-		flex-direction: column;
-	}
-	.modal-header,
-	.modal-footer {
-		flex: 0 0 auto;
-	}
-	.modal-body {
-		flex: 1 1 auto;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
 	}
 }
 
@@ -1181,4 +1190,25 @@ h2.h2-sb span:last-child:not(:only-child) {
 		padding: 10px 6px;
 		font-size: .82em;
 	}
+}
+
+/* --- Прихована для очей таблиця цін (table.sr-only) для пошукових ботів/
+   скрінрідерів "виїжджала" за межі екрана: у таблиць за замовчуванням
+   table-layout:auto, який ігнорує width:1px з .sr-only і розтягує таблицю
+   під вміст (~940px), через що вся сторінка ставала ширшою за екран і
+   з'являлась горизонтальна прокрутка з білим полем збоку. table-layout:fixed
+   змушує браузер поважати задану ширину. Стосується лише елементів
+   <table>, на інші .sr-only (наприклад <p>) не впливає. */
+table.sr-only,
+table.sr-only th,
+table.sr-only td {
+	/* .sr-only ставить white-space:nowrap, а через це навіть
+	   table-layout:fixed не змушує браузер поважати width:1px — Chrome
+	   все одно розтягує таблицю під "нерозривний" текст комірок. Дозволяємо
+	   перенос рядків (контент однаково невидимий, overflow:hidden з
+	   .sr-only), і тоді таблиця нарешті стискається до реального 1px
+	   замість ~940px, які зсували всю сторінку і давали біле поле збоку
+	   на мобільній. */
+	table-layout: fixed;
+	white-space: normal;
 }
