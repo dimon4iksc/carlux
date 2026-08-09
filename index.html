@@ -4,7 +4,7 @@ $cms = json_decode(file_get_contents(__DIR__ . '/data/content.json'), true);
 $cms_page = 'main';
 ?>
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html lang="uk" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="UTF-8">
 
@@ -63,6 +63,48 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 <!-- End Facebook Pixel Code -->
 
 
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "AutoWash",
+		"name": "CarLux Detailing",
+		"image": "https://www.carlux.com.ua/src/img/logo-2.png",
+		"url": "https://www.carlux.com.ua/",
+		"telephone": "+380972189000",
+		"priceRange": "₴₴",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "вул. Богдана Кріля \"Пірата\", 13",
+			"addressLocality": "Львів",
+			"addressRegion": "Львівська область",
+			"postalCode": "79053",
+			"addressCountry": "UA"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 49.799921,
+			"longitude": 24.0051981
+		},
+		"hasMap": "https://maps.app.goo.gl/i1VtgTyuGpTvyxxg8",
+		"openingHoursSpecification": [
+			{
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+				"opens": "09:00",
+				"closes": "20:00"
+			},
+			{
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": "Sunday",
+				"opens": "09:00",
+				"closes": "17:00"
+			}
+		],
+		"sameAs": [
+			"https://www.instagram.com/carlux.detailing.lviv/"
+		]
+	}
+	</script>
 </head>
 <body>
 	<!-- Modals -->
@@ -417,7 +459,44 @@ src="https://www.facebook.com/tr?id=785101158357215&ev=PageView&noscript=1"
 
 			<div class="pv2-photo">
 				<img src="src/img/price-table.jpg" alt="Ціни CarLux Detailing: хімчистка салону авто Delux і Delux Premium, полірування кузова Delux для класів Mini, Sedan, Crossover, Jeep у Львові" loading="lazy">
-				<p class="sr-only">Ціни на послуги CarLux Detailing у Львові: хімчистка салону авто (Standart+ та Standart LUX) для класів Mini, Sedan, Crossover, Jeep; полірування кузова системою Rupes; нанесення кераміки. Точну вартість для вашого авто уточнюйте за телефоном або в заявці на сайті.</p>
+				<table class="sr-only">
+					<caption>Ціни на хімчистку салону авто та полірування кузова CarLux Detailing у Львові</caption>
+					<thead>
+						<tr>
+							<th>Клас авто</th>
+							<th>Хімчистка салону авто Delux</th>
+							<th>Хімчистка салону авто Delux Premium</th>
+							<th>Полірування кузову авто Delux</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Mini</td>
+							<td>5000 грн</td>
+							<td>6000 грн</td>
+							<td>6900 грн</td>
+						</tr>
+						<tr>
+							<td>Sedan</td>
+							<td>6000 грн</td>
+							<td>7000 грн</td>
+							<td>7900 грн</td>
+						</tr>
+						<tr>
+							<td>Crossover (mini jeep)</td>
+							<td>7000 грн</td>
+							<td>8000 грн</td>
+							<td>8900 грн</td>
+						</tr>
+						<tr>
+							<td>Jeep</td>
+							<td>8000 грн</td>
+							<td>9000 грн</td>
+							<td>9900 грн</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="sr-only">Подарунок при замовленні — повна мийка + озонація. Гарантія на послуги від CarLux, термін виконання 1 день, працюємо з преміальними брендами Karcher, Kenotek, Rupes, Nanolex, CarPro.</p>
 			</div>
 
 			<div class="pv2-cta">
