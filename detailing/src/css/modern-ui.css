@@ -123,11 +123,38 @@ button:focus-visible,
 
 /* --- Модалки замовлення: трохи повітря і скруглення на мобільних --- */
 @media (max-width: 575.98px) {
-	.modal-dialog {
+	/* Раніше ці правила програвали за специфічністю селекторам
+	   .modal.show .modal-dialog (style.css) та #servicesModal .modal-dialog
+	   (style.css) — тому на мобільній модалки й далі відсувались на 75px /
+	   4.5rem зверху і не мали обмеження висоти, через що вилазили за межі
+	   екрана. Дублюємо ті самі селектори тут (той самий рівень специфічності,
+	   але файл підключений пізніше -> перемагає), плюс додаємо max-height
+	   з внутрішнім скролом по modal-body, щоб контент завжди вміщався. */
+	.modal-dialog,
+	.modal.show .modal-dialog,
+	#servicesModal .modal-dialog {
 		margin: 12px auto;
+		max-width: calc(100% - 24px);
+		max-height: calc(100% - 24px);
+	}
+	.modal-dialog-centered {
+		min-height: calc(100% - 24px);
 	}
 	.modal-content {
 		border-radius: 14px;
+		max-height: calc(100vh - 24px);
+		max-height: calc(100dvh - 24px);
+		display: flex;
+		flex-direction: column;
+	}
+	.modal-header,
+	.modal-footer {
+		flex: 0 0 auto;
+	}
+	.modal-body {
+		flex: 1 1 auto;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 }
 
