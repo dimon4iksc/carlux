@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $(".tel").inputmask({"mask": "+38 (999) 99-99-999"});
   
-  for(var i = 1; i <= 18; i++) {
+  for(var i = 1; i <= 14; i++) {
     $(".photo-carousel").append(
       '<div class="gallery-img">' +
       '<a href="src/img/photos/p_' + i +'.jpg" rel="photo">' +
