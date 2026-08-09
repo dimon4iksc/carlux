@@ -124,10 +124,60 @@ button:focus-visible,
 /* --- Модалки замовлення: трохи повітря і скруглення на мобільних --- */
 @media (max-width: 575.98px) {
 	.modal-dialog {
-		margin: 12px;
+		margin: 12px auto;
 	}
 	.modal-content {
 		border-radius: 14px;
+	}
+}
+
+/* --- Стрілки перемикання фото/відео в слайдері: прості білі замість синьої іконки (мобільна версія) --- */
+@media (max-width: 767.98px) {
+	.photo-carousel .slick-prev,
+	.photo-carousel .slick-next,
+	.video-carousel .slick-prev,
+	.video-carousel .slick-next {
+		background-image: none;
+		width: 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.photo-carousel .slick-prev::before,
+	.photo-carousel .slick-next::before,
+	.video-carousel .slick-prev::before,
+	.video-carousel .slick-next::before {
+		display: block;
+		content: '';
+		width: 12px;
+		height: 12px;
+		border-top: 3px solid #fff;
+		border-right: 3px solid #fff;
+	}
+
+	.photo-carousel .slick-prev::before,
+	.video-carousel .slick-prev::before {
+		transform: rotate(-135deg);
+	}
+
+	.photo-carousel .slick-next::before,
+	.video-carousel .slick-next::before {
+		transform: rotate(45deg);
+	}
+}
+
+/* --- Логотипи клієнтів: збільшуємо і зменшуємо білий відступ, щоб було добре видно на мобільній --- */
+@media (max-width: 767.98px) {
+	.clients .row img {
+		max-height: 92px !important;
+		width: auto !important;
+		padding: 6px 8px !important;
+		margin: 6px 8px !important;
+		background: #fff !important;
+		border-radius: 10px !important;
+		box-shadow: 0 4px 14px -4px rgba(0, 0, 0, .5);
 	}
 }
 
