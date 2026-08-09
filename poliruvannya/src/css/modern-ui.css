@@ -143,6 +143,10 @@ button:focus-visible,
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		/* базовий .slick-prev у style.css скидає центрування (transform: rotate(180deg)
+		   замість translate(0,-50%)), через що ліва стрілка "провисає" нижче правої —
+		   повертаємо коректне вертикальне центрування для обох стрілок */
+		transform: translateY(-50%) !important;
 	}
 
 	.photo-carousel .slick-prev::before,
@@ -166,6 +170,37 @@ button:focus-visible,
 	.video-carousel .slick-next::before {
 		transform: rotate(45deg);
 	}
+}
+
+/* --- Стрілки перемикання відгуків: той самий білий стиль, що і у фото/відео,
+   на всіх розширеннях екрана (і виправлене вертикальне центрування) --- */
+.reviews-carousel .slick-prev,
+.reviews-carousel .slick-next {
+	background-image: none;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(-50%) !important;
+}
+
+.reviews-carousel .slick-prev::before,
+.reviews-carousel .slick-next::before {
+	display: block;
+	content: '';
+	width: 12px;
+	height: 12px;
+	border-top: 3px solid #fff;
+	border-right: 3px solid #fff;
+}
+
+.reviews-carousel .slick-prev::before {
+	transform: rotate(-135deg);
+}
+
+.reviews-carousel .slick-next::before {
+	transform: rotate(45deg);
 }
 
 /* --- Логотипи клієнтів: збільшуємо і зменшуємо білий відступ, щоб було добре видно на мобільній --- */
